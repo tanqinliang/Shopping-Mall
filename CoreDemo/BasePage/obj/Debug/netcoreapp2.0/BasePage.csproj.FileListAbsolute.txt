@@ -1,0 +1,5 @@
+D:\git库\CoreDemo\BasePage\bin\Debug\netcoreapp2.0\BasePage.deps.json
+D:\git库\CoreDemo\BasePage\bin\Debug\netcoreapp2.0\BasePage.dll
+D:\git库\CoreDemo\BasePage\obj\Debug\netcoreapp2.0\BasePage.csproj.CoreCompileInputs.cache
+D:\git库\CoreDemo\BasePage\obj\Debug\netcoreapp2.0\BasePage.AssemblyInfoInputs.cache
+D:\git库\CoreDemo\BasePage\obj\Debug\netcoreapp2.0\BasePage.AssemblyInfo.cs

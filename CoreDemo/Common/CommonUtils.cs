@@ -280,7 +280,7 @@ namespace Common
                 return oValue.ToString().Trim();
             }
         }
-        
+
         /// <summary>
         /// decimal类型转换,如转换失败返回0
         /// </summary>
@@ -340,6 +340,29 @@ namespace Common
             }
 
             return Math.Round(iValue, iPointNum);
+        }
+
+
+        /// <summary>
+        /// 根据时间得到星期几
+        /// </summary>
+        /// <param name="dTime">时间</param>
+        /// <returns>星期几</returns>
+        public static string GetWeek(DateTime dTime)
+        {
+            string[] sWeek = new string[] { "星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六" };
+            int iWeek = GetIntValue(dTime.DayOfWeek.ToString("d"));
+            return sWeek[iWeek];
+        }
+
+        /// <summary>
+        /// 根据时间得到星期几
+        /// </summary>
+        /// <param name="dTime">时间</param>
+        /// <returns>星期几</returns>
+        public static string GetWeek(string sTime)
+        {
+            return GetWeek(GetDateTimeValue(sTime));
         }
     }
 }
