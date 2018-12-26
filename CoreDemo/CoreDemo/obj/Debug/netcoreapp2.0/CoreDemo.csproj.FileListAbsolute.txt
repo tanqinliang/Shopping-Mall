@@ -1,0 +1,11 @@
+D:\git库\CoreDemo\CoreDemo\bin\Debug\netcoreapp2.0\CoreDemo.deps.json
+D:\git库\CoreDemo\CoreDemo\bin\Debug\netcoreapp2.0\CoreDemo.runtimeconfig.json
+D:\git库\CoreDemo\CoreDemo\bin\Debug\netcoreapp2.0\CoreDemo.runtimeconfig.dev.json
+D:\git库\CoreDemo\CoreDemo\bin\Debug\netcoreapp2.0\CoreDemo.dll
+D:\git库\CoreDemo\CoreDemo\bin\Debug\netcoreapp2.0\CoreDemo.pdb
+D:\git库\CoreDemo\CoreDemo\obj\Debug\netcoreapp2.0\CoreDemo.csprojResolveAssemblyReference.cache
+D:\git库\CoreDemo\CoreDemo\obj\Debug\netcoreapp2.0\CoreDemo.csproj.CoreCompileInputs.cache
+D:\git库\CoreDemo\CoreDemo\obj\Debug\netcoreapp2.0\CoreDemo.AssemblyInfoInputs.cache
+D:\git库\CoreDemo\CoreDemo\obj\Debug\netcoreapp2.0\CoreDemo.AssemblyInfo.cs
+D:\git库\CoreDemo\CoreDemo\obj\Debug\netcoreapp2.0\CoreDemo.dll
+D:\git库\CoreDemo\CoreDemo\obj\Debug\netcoreapp2.0\CoreDemo.pdb

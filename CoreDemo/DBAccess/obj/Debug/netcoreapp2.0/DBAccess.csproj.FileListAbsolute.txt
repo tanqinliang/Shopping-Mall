@@ -1,0 +1,12 @@
+D:\git库\CoreDemo\DBAccess\obj\Debug\netcoreapp2.0\DBAccess.csproj.CoreCompileInputs.cache
+D:\git库\CoreDemo\DBAccess\obj\Debug\netcoreapp2.0\DBAccess.AssemblyInfoInputs.cache
+D:\git库\CoreDemo\DBAccess\obj\Debug\netcoreapp2.0\DBAccess.AssemblyInfo.cs
+D:\git库\CoreDemo\DBAccess\bin\Debug\netcoreapp2.0\DBAccess.deps.json
+D:\git库\CoreDemo\DBAccess\bin\Debug\netcoreapp2.0\DBAccess.dll
+D:\git库\CoreDemo\DBAccess\obj\Debug\netcoreapp2.0\DBAccess.csprojResolveAssemblyReference.cache
+D:\git库\CoreDemo\DBAccess\bin\Debug\netcoreapp2.0\DBAccess.pdb
+D:\git库\CoreDemo\DBAccess\obj\Debug\netcoreapp2.0\DBAccess.dll
+D:\git库\CoreDemo\DBAccess\obj\Debug\netcoreapp2.0\DBAccess.pdb
+D:\git库\CoreDemo\DBAccess\bin\Debug\netcoreapp2.0\Common.dll
+D:\git库\CoreDemo\DBAccess\bin\Debug\netcoreapp2.0\Common.pdb
+D:\git库\CoreDemo\DBAccess\obj\Debug\netcoreapp2.0\DBAccess.csproj.CopyComplete
