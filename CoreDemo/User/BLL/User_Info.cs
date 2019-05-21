@@ -9,7 +9,6 @@ Author			Date				Description
 using System;
 using System.Data;
 using System.Text;
-using Soholife;
 
 
 namespace BLL
@@ -51,9 +50,9 @@ namespace BLL
 		/// 得到记录信息
 		/// </summary>
 		/// <returns></returns>
-		public Model.User_Info GetRecordInfo(int iID)
+		public Model.User_Info GetRecordInfo(string sAccount)
 		{
-			return dal.GetRecordInfo(iID);
+			return dal.GetRecordInfo(sAccount);
 		}
 
 	}

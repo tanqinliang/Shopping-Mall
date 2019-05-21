@@ -1,0 +1,25 @@
+﻿body{ margin:0px; padding:0px; font-size:12px; background:#fff;}
+a{blr:expression(this.onFocus=this.blur());}
+a:focus{outline:none;}
+a { color:#666; text-decoration:none}
+.settip_warp { height: auto; margin:0 auto; padding:80px 20px 0; width:400px;}
+.settip_warp .title { background: url("../images/fixed_bg.png") repeat-x scroll center bottom; color: #2899CC; font-size: 14px; font-weight: bolder; padding: 15px 0; }
+.fail_style .settip, .success_style .settip { margin-top: 10px; overflow: auto; text-align: left; }
+.fail_style .settip { background: url("../images/tip_fail.png") no-repeat 20px 0}
+.success_style .settip { background: url("../images/tip_success.png") no-repeat 20px 0; }
+.green { color: #0d8607 }
+.red { color: #F00 }
+.settip_info { font-size: 14px; line-height: 24px; margin: 5px 0 35px 100px; }
+.settip font { display: inline-block; margin: 0 10px 10px 0; }
+.button-cancel { margin-top:20px; color: #666; display: block; font-size: 12px; font-weight: normal; font-family: "宋体"; text-decoration: none; }
+/*提示*/
+.qz_msgbox_layer, .qz_msgbox_layer .gtl_ico_succ, .qz_msgbox_layer .gtl_ico_fail, .qz_msgbox_layer .gtl_ico_hits, .qz_msgbox_layer .gtl_ico_clear, .qz_msgbox_layer .gtl_end { background-image: url("http://r.vnetone.com/common/images/gb_tip_layer.png"); background-repeat: no-repeat; color: #606060; display: inline-block; font-size: 14px; font-weight: bold; height: 54px; line-height: 54px; }
+.qz_msgbox_layer_wrap { left: 0; position: fixed; _position: absolute; _top:expression(document.documentElement.scrollTop + Math.round(document.documentElement.offsetHeight / 2) + "px");
+text-align: center; top: 46%; width: 100%; z-index: 65533; }
+.qz_msgbox_layer { background-position: 0 -161px; background-repeat: repeat-x; margin: 0 auto; padding: 0 18px 0 9px; position: relative; }
+.qz_msgbox_layer .gtl_ico_succ { background-position: -6px 0; left: -45px; position: absolute; top: 0; width: 45px; }
+.qz_msgbox_layer .gtl_end { background-position: 0 0; position: absolute; right: -6px; top: 0; width: 6px; }
+.qz_msgbox_layer .gtl_ico_fail { background-position: -6px -108px; left: -45px; position: absolute; top: 0; width: 45px; }
+.qz_msgbox_layer .gtl_ico_hits { background-position: -6px -54px; left: -45px; position: absolute; top: 0; width: 45px; }
+.qz_msgbox_layer .gtl_ico_clear { background-position: -6px 0; left: -5px; position: absolute; top: 0; width: 5px; }
+.qz_msgbox_layer img { float: left; margin: 19px 10px 0 5px; }

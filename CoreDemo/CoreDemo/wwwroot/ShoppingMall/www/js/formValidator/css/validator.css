@@ -1,0 +1,23 @@
+.onShow
+{
+   /* background:url(../images/tip_show.png) no-repeat; */
+   display:block;width: 320px;margin-left:105px;margin-top: 5px;font-size: 12px;height: 16px;line-height: 16px;color:#ccc;padding-left:22px;
+}
+.onFocus
+{
+    background:url(../images/tip_focus.png) no-repeat; 
+   display:block;width: 320px;margin-left:105px;margin-top: 5px;font-size: 12px;height: 16px;line-height: 16px;padding-left:22px;color:#ccc;
+}
+.onError
+{
+   background:url(../images/tip_error.png) no-repeat;
+   display:block;width: 320px;margin-left:105px;margin-top:5px;font-size: 12px;height: 16px;line-height: 16px;padding-left:22px;color:#ff0000;
+}
+.onSuccess
+{
+    background:url(../images/tip_success.png) no-repeat;  
+   display:block;width: 320px;margin-left:105px;margin-top: 5px;font-size: 12px;height:16px;line-height: 16px;padding-left:22px;color:#ccc;position: relative;
+    top: -33px;
+    right: -293px;
+
+}

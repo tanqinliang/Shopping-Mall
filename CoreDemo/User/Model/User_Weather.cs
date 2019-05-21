@@ -9,7 +9,7 @@ Author			Date				Description
 using System;
 
 
-namespace Soholife.Model
+namespace Model
 {
 	/// <summary>
 	/// Soholife.Model

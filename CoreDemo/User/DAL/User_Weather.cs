@@ -6,13 +6,13 @@ Update		:
 Author			Date				Description			
 *****************************************************************************************************/
 
+using DBAccess;
 using System;
 using System.Data;
 using System.Data.Common;
-using Soholife;
 
 
-namespace Soholife.DAL
+namespace DAL
 {
 	/// <summary>
 	/// Soholife.DAL
@@ -27,21 +27,21 @@ namespace Soholife.DAL
 		/// <summary>
 		/// 得到数据库连接字符串
 		/// </summary>
-		private string _connectstring = Soholife.DB.ConfigTools.GetConnection();
-		
+		private string _connectstring = Connection.UserStatConnection();
 
-		/// <summary>
-		/// 当前数据层操作对象
-		/// </summary>
-		private Soholife.IDatabase _db = Soholife.DbFactory.Create(Soholife.DB.ConfigTools.GetDataProvider());
-		
 
-		/// <summary>
-		/// 添加记录信息
-		/// </summary>
-		/// <param name="obj">存放了要添加的记录的相关信息模型对象</param>
-		/// <returns></returns>
-		public void AddRecord(Model.User_Weather obj)
+        /// <summary>
+        /// 当前数据层操作对象
+        /// </summary>
+        private IDatabase _db = DbFactory.Create(Connection.GetDataProvider());
+
+
+        /// <summary>
+        /// 添加记录信息
+        /// </summary>
+        /// <param name="obj">存放了要添加的记录的相关信息模型对象</param>
+        /// <returns></returns>
+        public void AddRecord(Model.User_Weather obj)
 		{
 			string sql = "cp_User_Weather_AddRecord";	
 			_db.CreateConnection(_connectstring);
@@ -144,23 +144,7 @@ namespace Soholife.DAL
 			return _db.ExecuteReaderToTable();
 		}
 
-		/// <summary>
-		/// 得到分页记录信息
-		/// </summary>
-		public Soholife.DB.SplitPage  GetRecordList(int iPage,int iPageSize)
-		{
-			string sql = "cp_User_Weather_GetPageRecord";	
-			_db.CreateConnection(_connectstring);
-			_db.CreateCommand(sql,CommandType.StoredProcedure);
-
-			_db.AddParameter("Page", iPage);
-			_db.AddParameter("PageSize", iPageSize);
-			_db.AddParameter("RowCount", DbType.Int32, ParameterDirection.Output);
-			DataTable t = _db.ExecuteReaderToTable();
-			int iTotalRow = Convert.ToInt32(_db.GetParameterValue("RowCount"));
-			return new Soholife.DB.SplitPage(iPage,iPageSize,iTotalRow ,t);
-		}
-
+	
 	}
 }
 

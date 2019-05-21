@@ -1,0 +1,254 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/MasterPage/WebPage.cshtml";
+}
+
+<style type="text/css">
+
+    /*换行*/
+    .rowMarginBottomTop {
+        margin: 18px 0 0 0;
+    }
+
+    .layui-form-item .layui-inline {
+        margin-bottom: 24px;
+    }
+
+    .layui-form-item {
+        margin-bottom: 0px;
+    }
+</style>
+<div class="childpage-main-comtent">
+    <form class="layui-form" action="">
+        <div class="layui-form-item rowMarginBottomTop">
+
+            <div class="layui-inline">
+                <label class="layui-form-label rowTopfontleft">商品类型：</label>
+                <div class="layui-input-inline">
+                    <select id="ProductType" name="ProductType" lay-filter="ProductType" lay-verify="required">
+                        <option value="0">---请选择---</option>
+                        @foreach (var item in ViewBag.ProductTypeList)
+                        {
+                            <option value="@item["ID"]">@item["Title"]</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <button id="AddProductType" data-type="reload" class="layui-btn layui-btn-normal resetSeachBtnlay">添加</button>
+            </div>
+        </div>
+
+        <div>
+            <table class="layui-hide" id="ProductTypeList" lay-filter="ProductTypeList"></table>
+
+            <script type="text/html" id="ProductTypeDelete">
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="ProductTypeDelete">删除</a>
+            </script>
+
+        </div>
+        <br />
+        <br />
+        <div class="layui-form-item rowMarginBottomTop">
+
+            <div class="layui-inline">
+                <label class="layui-form-label rowTopfontleft">商品类型：</label>
+                <div class="layui-input-inline">
+                    <select id="HomeTopProductType" name="HomeTopProductType" lay-filter="HomeTopProductType" lay-verify="required">
+                        <option value="0">---请选择---</option>
+                        @foreach (var item in ViewBag.HomeTopProductTypeList)
+                        {
+                            <option value="@item["ID"]">@item["Title"]</option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label rowTopfontleft">商品：</label>
+                <div class="layui-input-inline">
+                    <select id="Product" name="Product" lay-filter="Product" lay-verify="required">
+                        <option value="0">---请选择---</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="layui-inline">
+                <button id="AddProduct" data-type="reload" class="layui-btn layui-btn-normal resetSeachBtnlay">添加</button>
+            </div>
+        </div>
+
+        <div>
+            <table class="layui-hide" id="ProductInfoList" lay-filter="ProductInfoList"></table>
+
+            <script type="text/html" id="ProductDelete">
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="ProductDelete">删除</a>
+            </script>
+
+        </div>
+    </form>
+</div>
+
+
+<script type="text/javascript">
+    var refreshGird; // 更新表格
+    var SearchParam = {};
+    var bootstrap = function ($, vso) {
+        "use strict";
+        var page = {
+            init: function () {
+                page.bind();
+                page.action();
+                page.initGird();
+                page.griddate = [];
+            },
+            bind: function () {
+                layui.use(['form', 'layedit', 'laydate', 'table'], function () {
+                    var form = layui.form
+                        , layer = layui.layer
+                        , layedit = layui.layedit
+                        , table = layui.table
+                        , laydate = layui.laydate;
+
+                    table.render({
+                        elem: '#ProductTypeList'
+                        , url: '/Product/Ajax/GetHomeTopTypeList'
+                        , cellMinWidth: 50
+                        , cols: [[
+                            { field: 'Title', title: '类型名称', align: 'center' }
+                            , { fixed: 'right', title: '操作', toolbar: '#ProductTypeDelete', align: 'center', minWidth: 200 }
+
+                        ]]
+                        , id: 'ProductTypeListReload'
+                    });
+
+                    table.render({
+                        elem: '#ProductInfoList'
+                        , url: '/Product/Ajax/GetHomeTopProductList'
+                        , cellMinWidth: 50
+                        , cols: [[
+                            { field: 'ProductName', title: '商品名称', align: 'center' }
+                            , { field: 'ProductTypeTitle', title: '类型名称', align: 'center' }
+                            , { fixed: 'right', title: '操作', toolbar: '#ProductDelete', align: 'center', minWidth: 200 }
+
+                        ]]
+                        , id: 'ProductListReload'
+                    });
+
+
+                    $('#AddProductType').on('click', function () {
+                        var vProductTypeID = $("#ProductType").val();
+                        $.getJSON("/ShopManage/Ajax/SetHomeTopProductType", { ProductTypeID: vProductTypeID, r: Math.random() }, function (json) {
+                            if (json.code == "-1") {
+                                top.vso.alert.error(json.msg);
+                            }
+                            else {
+                                top.vso.alert.success(json.msg);
+                                window.location.reload();
+                            }
+                        });
+
+                    });
+
+                    $("#AddProduct").on('click', function () {
+                        var vProductID = $("#Product").val();
+                        $.getJSON("/ShopManage/Ajax/SetHomeTopProduct", { ProductID: vProductID, r: Math.random() }, function (json) {
+                            if (json.code == "-1") {
+                                top.vso.alert.error(json.msg);
+                            }
+                            else {
+                                top.vso.alert.success(json.msg);
+                                window.location.reload();
+                            }
+                        });
+
+
+                    });
+
+                    //监听行工具事件
+                    table.on('tool(ProductTypeList)', function (obj) {
+                        var data = obj.data;
+                        if (obj.event === 'ProductTypeDelete') {
+
+                            $.getJSON("/ShopManage/Ajax/SetHomeTopProductType", { ProductTypeID: data.ID, IsDelet: true, r: Math.random() }, function (json) {
+                                if (json.code == "-1") {
+                                    top.vso.alert.error(json.msg);
+                                }
+                                else {
+                                    top.vso.alert.success(json.msg);
+                                    window.location.reload();
+                                }
+                            });
+                        }
+                    });
+
+                    table.on('tool(ProductInfoList)', function (obj) {
+                        var data = obj.data;
+                        if (obj.event === 'ProductDelete') {
+
+                            $.getJSON("/ShopManage/Ajax/SetHomeTopProduct", { ProductID: data.ID, IsDelet: true, r: Math.random() }, function (json) {
+                                if (json.code == "-1") {
+                                    top.vso.alert.error(json.msg);
+                                }
+                                else {
+                                    top.vso.alert.success(json.msg);
+                                    window.location.reload();
+                                }
+                            });
+                        }
+
+                    });
+
+                    //日期
+                    laydate.render({
+                        elem: '#date'
+                    });
+                    laydate.render({
+                        elem: '#date1'
+                    });
+
+
+
+
+                    //监听提交
+                    form.on('select(HomeTopProductType)', function (data) {
+                        var vProductInfoList = $("#Product");
+                        vProductInfoList.html("");
+                        $.getJSON("/ShopManage/Ajax/GetProductList", { ProductTypeID: data.value, r: Math.random() }, function (json) {
+                            if (json.code == "1") {
+                                var vHtml = "<option value='0'>请选择</option>";
+                                for (var i = 0; i < json.data.length; i++) {
+                                    vHtml += "<option value=" + json.data[i].ID + ">" + json.data[i].ProductName + "</option>"
+                                }
+                                vProductInfoList.html(vHtml);
+                                form.render('select');
+                            }
+
+
+                        });
+                    });
+
+                });
+            },
+            action: function () {
+
+            },
+            initGird: function () {
+            },
+            search: function (param) {
+
+            }
+        };
+        // 保存数据后回调刷新
+        refreshGird = function () {
+            page.search();
+        }
+        page.init();
+
+
+
+    };
+
+
+</script>
+

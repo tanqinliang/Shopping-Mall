@@ -3,3 +3,14 @@ D:\git库\CoreDemo\BasePage\bin\Debug\netcoreapp2.0\BasePage.dll
 D:\git库\CoreDemo\BasePage\obj\Debug\netcoreapp2.0\BasePage.csproj.CoreCompileInputs.cache
 D:\git库\CoreDemo\BasePage\obj\Debug\netcoreapp2.0\BasePage.AssemblyInfoInputs.cache
 D:\git库\CoreDemo\BasePage\obj\Debug\netcoreapp2.0\BasePage.AssemblyInfo.cs
+D:\git库\CoreDemo\BasePage\obj\Debug\netcoreapp2.0\BasePage.csprojResolveAssemblyReference.cache
+D:\git库\CoreDemo\BasePage\bin\Debug\netcoreapp2.0\BasePage.pdb
+D:\git库\CoreDemo\BasePage\bin\Debug\netcoreapp2.0\Common.dll
+D:\git库\CoreDemo\BasePage\bin\Debug\netcoreapp2.0\DBAccess.dll
+D:\git库\CoreDemo\BasePage\bin\Debug\netcoreapp2.0\User.dll
+D:\git库\CoreDemo\BasePage\bin\Debug\netcoreapp2.0\Common.pdb
+D:\git库\CoreDemo\BasePage\bin\Debug\netcoreapp2.0\DBAccess.pdb
+D:\git库\CoreDemo\BasePage\bin\Debug\netcoreapp2.0\User.pdb
+D:\git库\CoreDemo\BasePage\obj\Debug\netcoreapp2.0\BasePage.csproj.CopyComplete
+D:\git库\CoreDemo\BasePage\obj\Debug\netcoreapp2.0\BasePage.dll
+D:\git库\CoreDemo\BasePage\obj\Debug\netcoreapp2.0\BasePage.pdb

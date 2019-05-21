@@ -1,0 +1,196 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/MasterPage/WebPage.cshtml";
+}
+
+<style type="text/css">
+
+    /*换行*/
+    .rowMarginBottomTop {
+        margin: 18px 0 0 0;
+    }
+
+    .layui-form-item .layui-inline {
+        margin-bottom: 24px;
+    }
+
+    .layui-form-item {
+        margin-bottom: 0px;
+    }
+</style>
+<div class="childpage-main-comtent">
+    <form class="layui-form" action="">
+        <div class="layui-form-item rowMarginBottomTop">
+            <div class="layui-inline">
+                <label class="layui-form-label rowTopfontleft">材质名称：</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="Name" lay-verify="identity" placeholder="请输入" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <button id="Search" data-type="reload" class="layui-btn layui-btn-normal resetSeachBtnlay">搜索</button>
+            </div>
+        </div>
+        <div class="layui-form-item rowMarginBottom">
+            <span class="bluebuttonCommonSty" id="AddProductMaterial" style="width: 120px;">添加材质类型</span>
+        </div>
+        <div>
+            <table class="layui-hide" id="ProductMaterialList" lay-filter="ProductMaterialList"></table>
+          
+            <script type="text/html" id="Status">
+                {{d.IsEnable?"<font style='color:green'>启用</font>":"<font style='color:red'>禁用</font>"}}
+            </script>
+            <script type="text/html" id="Operation">
+                <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="SetStatus">{{d.IsEnable?"禁用":"启用"}}</a>
+            </script>
+        </div>
+    </form>
+</div>
+
+
+<script type="text/javascript">
+    var refreshGird; // 更新表格
+    var SearchParam = {};
+    var active;
+    var bootstrap = function ($, vso) {
+        "use strict";
+        var page = {
+            init: function () {
+                page.bind();
+                page.action();
+                page.initGird();
+                page.griddate = [];
+            },
+            bind: function () {
+                layui.use(['form', 'layedit', 'laydate', 'table',], function () {
+                    var form = layui.form
+                        , layer = layui.layer
+                        , layedit = layui.layedit
+                        , table = layui.table
+                        , laydate = layui.laydate;
+
+                    table.render({
+                        elem: '#ProductMaterialList'
+                        , url: '/Product/Ajax/GetProductMaterialList'
+                        , cellMinWidth: 50
+                        , cols: [[
+                            { field: 'ID', title: '材质编号', align: 'center' }
+                            , { field: 'Name', title: '材质名称', align: 'center' }
+                            , { field: 'Details', title: '备注',  align: 'center' }
+                            , { field: 'Status', title: '状态', templet: "#Status", align: 'center' }
+                            , { fixed: 'right', title: '操作', toolbar: '#Operation', align: 'center', minWidth: 200 }
+
+                        ]]
+                        , id: 'ProductMaterialListReload'
+                        , page: false
+                    });
+
+                    var $ = layui.$;
+                    active = {
+                        reload: function (curr) {
+
+                            //执行重载
+                            table.reload('ProductMaterialListReload', {
+                                where: {
+                                    Name: $('#Name').val()
+
+                                }
+                            });
+                        }
+                    };
+
+                    $('#Search').on('click', function () {
+                        var type = $(this).data('type');
+                        active[type] ? active[type].call(this) : '';
+                        return false;
+                    });
+
+                    //监听行工具事件
+                    table.on('tool(ProductMaterialList)', function (obj) {
+                        var data = obj.data;
+
+                        if (obj.event === 'edit') {
+                            SetProductMaterial('修改商品材质', data.ID);
+
+                        } else {
+                            $.getJSON("/Product/Ajax/SetTypeStatus", { ID: data.ID, r: Math.random() }, function (json) {
+                                if (json.code == "-1") {
+                                    top.vso.alert.error(json.msg);
+                                }
+                                else {
+                                    top.vso.alert.success(json.msg);
+                                    vso.layerClose(window.name);
+                                    active.reload();
+                                }
+                            });
+                        }
+                    });
+
+                    //日期
+                    laydate.render({
+                        elem: '#date'
+                    });
+                    laydate.render({
+                        elem: '#date1'
+                    });
+
+
+                    //监听指定开关
+                    form.on('switch(switchTest)', function (data) {
+                        layer.msg('开关checked：' + (this.checked ? 'true' : 'false'), {
+                            offset: '6px'
+                        });
+                        layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+                    });
+
+                    //监听提交
+                    form.on('submit(demo1)', function (data) {
+                        layer.alert(JSON.stringify(data.field), {
+                            title: '最终的提交信息'
+                        })
+                        return false;
+                    });
+
+                });
+            },
+            action: function () {
+                $("#AddProductMaterial").on("click", function () {
+
+                    SetProductMaterial('添加商品类型', 0);
+                });
+            },
+            initGird: function () {
+            },
+            search: function (param) {
+                active.reload(1);
+            }
+        };
+        // 保存数据后回调刷新
+        refreshGird = function () {
+            page.search();
+        }
+        page.init();
+        function SetProductMaterial(PageTitle, ID) {
+            vso.layerForm({
+                id: 'Forms',
+                title: PageTitle,
+                url: '/Product/ProductMaterial/AddMaterial?MaterialID=' + ID,
+                width: 600,
+                height: 380,
+                btn: ['确定', '取消'],
+                callBack: function (id) {
+                    return top[id].acceptClick(refreshGird);;
+                },
+                callBack2: function (id) {
+                    return top[id].resetClick();
+                }
+            });
+        }
+    };
+
+
+</script>
+

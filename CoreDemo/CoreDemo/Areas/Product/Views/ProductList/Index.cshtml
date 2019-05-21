@@ -1,0 +1,280 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/MasterPage/WebPage.cshtml";
+}
+
+<style type="text/css">
+
+    /*换行*/
+    .rowMarginBottomTop {
+        margin: 18px 0 0 0;
+    }
+
+    .layui-form-item .layui-inline {
+        margin-bottom: 24px;
+    }
+
+    .layui-form-item {
+        margin-bottom: 0px;
+    }
+</style>
+<div class="childpage-main-comtent">
+    <form class="layui-form" action="">
+        <div class="layui-form-item rowMarginBottomTop">
+            <div class="layui-inline">
+                <label class="layui-form-label rowTopfontleft">商品名称：</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="ProductTitle" id="ProductTitle" lay-verify="identity" placeholder="请输入" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label rowTopfontleft">商品类型：</label>
+                <div class="layui-input-inline">
+                    <select id="ProductType" name="ProductType" lay-filter="ProductType" lay-verify="required">
+                        <option value="0">---请选择---</option>
+                        @foreach (var item in ViewBag.ProductTypeList)
+                        {
+                            <option value="@item["ID"]">@item["Title"]</option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <label class="layui-form-label rowTopfontleft">商品材质：</label>
+                <div class="layui-input-inline">
+                    <select id="ProductMaterial" name="ProductMaterial" lay-filter="ProductMaterial" lay-verify="required">
+                        <option value="0">---请选择---</option>
+                        @foreach (var item in ViewBag.ProductMaterialList)
+                        {
+                            <option value="@item["ID"]">@item["Name"]</option>
+                        }
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="layui-inline">
+                <label class="layui-form-label rowTopfontleft">状态：</label>
+                <div class="layui-input-inline">
+                    <select id="IsEnable" name="IsEnable" lay-filter="IsEnable" lay-verify="required">
+                        <option value="-1">---请选择---</option>
+                        <option value="1">启用</option>
+                        <option value="0">禁用</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-inline">
+                <button id="Search" data-type="reload" class="layui-btn layui-btn-normal resetSeachBtnlay">搜索</button>
+            </div>
+        </div>
+        <div class="layui-form-item rowMarginBottom">
+            <span class="bluebuttonCommonSty" id="AddProduct" style="width: 120px;">添加商品类型</span>
+        </div>
+        <div>
+            <table class="layui-hide" id="ProductList" lay-filter="ProductList"></table>
+            <script type="text/html" id="UnitPrice">
+                {{d.Price+"元/"+d.Unit}}
+            </script>
+            <script type="text/html" id="Status">
+                {{d.IsEnable?"<font style='color:green'>启用</font>":"<font style='color:red'>禁用</font>"}}
+            </script>
+
+            <script type="text/html" id="Operation">
+                <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="SetStatus">{{d.IsEnable?"禁用":"启用"}}</a>
+            </script>
+            <script type="text/html" id="Image">
+                <img class="layui-upload-img" src="{{d.Image+d.ID+".png"}}" />
+            </script>
+            <script type="text/html" id="SetTime">
+                {{Format(d.SetTime,"yyyy-MM-dd hh:mm:ss")}}
+            </script>
+        </div>
+    </form>
+</div>
+
+
+<script type="text/javascript">
+    var refreshGird; // 更新表格
+    var SearchParam = {};
+    var active;
+    var bootstrap = function ($, vso) {
+        "use strict";
+        var page = {
+            init: function () {
+                page.bind();
+                page.action();
+                page.initGird();
+                page.griddate = [];
+            },
+            bind: function () {
+                layui.use(['form', 'layedit', 'laydate', 'table',], function () {
+                    var form = layui.form
+                        , layer = layui.layer
+                        , layedit = layui.layedit
+                        , table = layui.table
+                        , laydate = layui.laydate;
+
+                    table.render({
+                        elem: '#ProductList'
+                        , url: '/Product/Ajax/GetProductList'
+                        , cellMinWidth: 50
+                        , cols: [[
+                            //{ field: 'ID', title: '商品编号', align: 'center' }
+                            { field: 'ProductName', title: '商品名称', align: 'center' }
+                            , { field: 'ProductTypeTitle', title: '商品类型', align: 'center' }
+                            , { field: 'MaterialName', title: '商品材质', align: 'center' }
+                            , { field: 'UnitPrice', title: '单价', templet: "#UnitPrice", align: 'center' }
+                            , { field: 'Image', title: '商品图片', templet: "#Image", align: 'center' }
+                            , { field: 'Status', title: '状态', templet: "#Status", align: 'center' }
+                            , { field: 'SetTime', title: '最后修改时间', templet: "#SetTime", align: 'center', width: 200 }
+                            , { field: 'Details', title: '备注', align: 'center' }
+                            , { fixed: 'right', title: '操作', toolbar: '#Operation', align: 'center', minWidth: 200 }
+
+                        ]]
+                        , id: 'ProductListReload'
+                        , page: true
+                        , limit: "10"
+                    });
+
+                    var $ = layui.$;
+                    active = {
+                        reload: function (curr) {
+
+                            //执行重载
+                            table.reload('ProductListReload', {
+                                page: {
+                                    curr: curr
+                                }
+                                , where: {
+                                    ProductTitle: $('#ProductTitle').val()
+                                    , ProductType: $('#ProductType').val()
+                                    , ProductMaterial: $('#ProductMaterial').val()
+                                    , IsEnable: $('#IsEnable').val()
+                                }
+                            });
+                        }
+                    };
+
+                    $('#Search').on('click', function () {
+                        var type = $(this).data('type');
+                        active[type] ? active[type].call(this) : '';
+                        return false;
+                    });
+
+                    //监听行工具事件
+                    table.on('tool(ProductList)', function (obj) {
+                        var data = obj.data;
+
+                        if (obj.event === 'edit') {
+                            SetProduct('修改商品类型', data.ID);
+
+                        } else {
+                            $.getJSON("/Product/Ajax/SetProductStatus", { ProductID: data.ID, r: Math.random() }, function (json) {
+                                if (json.code == "-1") {
+                                    top.vso.alert.error(json.msg);
+                                }
+                                else {
+                                    top.vso.alert.success(json.msg);
+                                    vso.layerClose(window.name);
+                                    active.reload();
+                                }
+                            });
+                        }
+                    });
+
+                    //日期
+                    laydate.render({
+                        elem: '#date'
+                    });
+                    laydate.render({
+                        elem: '#date1'
+                    });
+
+
+                    //监听指定开关
+                    form.on('switch(switchTest)', function (data) {
+                        layer.msg('开关checked：' + (this.checked ? 'true' : 'false'), {
+                            offset: '6px'
+                        });
+                        layer.tips('温馨提示：请注意开关状态的文字可以随意定义，而不仅仅是ON|OFF', data.othis)
+                    });
+
+                    //监听提交
+                    form.on('submit(demo1)', function (data) {
+                        layer.alert(JSON.stringify(data.field), {
+                            title: '最终的提交信息'
+                        })
+                        return false;
+                    });
+
+                });
+            },
+            action: function () {
+                $("#AddProduct").on("click", function () {
+
+                    SetProduct('添加商品类型', 0);
+                });
+            },
+            initGird: function () {
+            },
+            search: function (param) {
+                active.reload(1);
+            }
+        };
+        // 保存数据后回调刷新
+        refreshGird = function () {
+            page.search();
+        }
+        page.init();
+        function SetProduct(PageTitle, ID) {
+            vso.layerForm({
+                id: 'Forms',
+                title: PageTitle,
+                url: '/Product/ProductList/AddProduct?ProductID=' + ID,
+                width: 600,
+                height: 580,
+                btn: ['确定', '取消'],
+                callBack: function (id) {
+                    return top[id].acceptClick(refreshGird);;
+                },
+                callBack2: function (id) {
+                    return top[id].resetClick();
+                }
+            });
+        }
+
+
+    };
+
+    function Format(datetime, fmt) {
+        if (parseInt(datetime) == datetime) {
+            if (datetime.length == 10) {
+                datetime = parseInt(datetime) * 1000;
+            } else if (datetime.length == 13) {
+                datetime = parseInt(datetime);
+            }
+        }
+        datetime = new Date(datetime);
+        var o = {
+            "M+": datetime.getMonth() + 1,                 //月份
+            "d+": datetime.getDate(),                    //日
+            "h+": datetime.getHours(),                   //小时
+            "m+": datetime.getMinutes(),                 //分
+            "s+": datetime.getSeconds(),                 //秒
+            "q+": Math.floor((datetime.getMonth() + 3) / 3), //季度
+            "S": datetime.getMilliseconds()             //毫秒
+        };
+        if (/(y+)/.test(fmt))
+            fmt = fmt.replace(RegExp.$1, (datetime.getFullYear() + "").substr(4 - RegExp.$1.length));
+        for (var k in o)
+            if (new RegExp("(" + k + ")").test(fmt))
+                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+        return fmt;
+    }
+</script>
+
+

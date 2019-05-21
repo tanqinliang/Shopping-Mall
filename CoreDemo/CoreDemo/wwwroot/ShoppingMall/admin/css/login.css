@@ -1,0 +1,58 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin: 0; padding: 0; word-wrap: break-word }
+body, html, input { font: 12px/1.5 tahoma, arial, \5b8b\4f53, sans-serif; }
+body { width: 100%; }
+body { font-family: "微软雅黑", "宋体", Tahoma, Arial; font-size: 12px; line-height: 24px; background: #CFDFEC url(../images/login_bg.png) repeat-x center top; padding: 0px; margin: 0px; }
+table { border-collapse: collapse; border-spacing: 0; }
+img { border: none }
+a { text-decoration: none; color: #444 }
+a:hover { text-decoration: underline; }
+ul, ol, li { list-style: none; }
+input, label, img, th { vertical-align: middle; }
+ul, ol, li { list-style: none; }
+.clear:after { display: block; visibility: hidden; clear: both; height: 0; content: "." }
+.clear { zoom: 1 }
+/*登录*/
+#loginBox { background: url(../images/login.png) no-repeat 0px 0px; width: 738px; height: 506px; margin: 0 auto; position: relative; }
+#loginBox div { width: 450px; height: 32px; padding: 0px; margin: 0px; position: absolute; }
+#loginBox div.passcode { top: 158px; left: 105px; }
+#loginBox div.username { top: 212px; left: 105px; }
+#loginBox div.password { top: 268px; left: 105px; }
+#loginBox div.code { top: 323px; left: 105px; }
+#loginBox div.code img { width: 90px; height: 26px; cursor: pointer }
+#loginBox div h5 { font-size: 14px; color: #2B4253; line-height: 32px; font-weight: normal; display: block; float: left; padding: 0px 25px 0px 15px; margin: 0px; }
+#loginBox div input.text { font-family: Tahoma, Geneva, sans-serif; font-size: 12px; line-height: 24px; height: 24px; float: left; padding: 0px; margin: 4px 0px 4px 10px; border-width: 0px; }
+#loginBox div input.btnEnter { font-size: 12px; line-height: 39px; background: url(../images/login.png) no-repeat right -506px; width: 98px; height: 39px; padding: 0px; margin: 0px; border-width: 0px; cursor: pointer; }
+#loginBox div.code span { float: left; margin-top: 4px; margin-left: 6px; }
+#loginBox div.button { width: 98px; height: 39px; position: absolute; top: 384px; right: 173px; cursor: pointer; }
+#loginBox div.back { line-height: 28px; background: url(../images/login.png) no-repeat left -506px; width: 120px; height: 30px; padding-left: 40px; position: absolute; top: 390px; left: 97px; }
+#loginBox div.help { line-height: 28px; background: url(../images/login.png) no-repeat -250px -506px; width: 120px; height: 30px; padding-left: 40px; border: 0; position: absolute; top: 390px; left: 230px; }
+#loginBox div.copyright { font-size: 12px; line-height: 20px; color: #355166; text-align: center; width: 90%; height: 40px; bottom: 3px; position: absolute; left: 0px; right: 0px; }
+/*登录2*/
+#loginBox2 { background: url(../images/login_logo.png) no-repeat 0px 0px; width: 738px; height: 506px; margin: 0 auto; position: relative; }
+#loginBox2 div { width: 450px; height: 32px; padding: 0px; margin: 0px; position: absolute; }
+#loginBox2 div.passcode { top: 158px; left: 105px; }
+#loginBox2 div.username { top: 212px; left: 105px; }
+#loginBox2 div.password { top: 268px; left: 105px; }
+#loginBox2 div.code { top: 323px; left: 105px; }
+#loginBox2 div.code img { width: 90px; height: 26px; cursor: pointer }
+#loginBox2 div h5 { font-size: 14px; color: #2B4253; line-height: 32px; font-weight: normal; display: block; float: left; padding: 0px 25px 0px 15px; margin: 0px; }
+#loginBox2 div input.text { font-family: Tahoma, Geneva, sans-serif; font-size: 12px; line-height: 24px; height: 24px; float: left; padding: 0px; margin: 4px 0px 4px 10px; border-width: 0px; }
+#loginBox2 div input.btnEnter { font-size: 12px; line-height: 39px; background: url(../images/login.png) no-repeat right -506px; width: 98px; height: 39px; padding: 0px; margin: 0px; border-width: 0px; cursor: pointer; }
+#loginBox2 div.code span { float: left; margin-top: 4px; margin-left: 6px; }
+#loginBox2 div.button { width: 98px; height: 39px; position: absolute; top: 384px; right: 173px; cursor: pointer; }
+#loginBox2 div.back { line-height: 28px; background: url(../images/login.png) no-repeat left -506px; width: 120px; height: 30px; padding-left: 40px; position: absolute; top: 390px; left: 97px; }
+#loginBox2 div.help { line-height: 28px; background: url(../images/login.png) no-repeat -250px -506px; width: 120px; height: 30px; padding-left: 40px; border: 0; position: absolute; top: 390px; left: 230px; }
+#loginBox2 div.copyright { font-size: 12px; line-height: 20px; color: #355166; text-align: center; width: 90%; height: 40px; bottom: 3px; position: absolute; left: 0px; right: 0px; }
+/*供货平台*/
+.g_loginBox2 {background: url(../images/g_login_logo.png) no-repeat 0px 0px!important;}
+/*合作商户平台*/
+.admind_loginbox{background: url(../images/admind_login_logo.png) no-repeat 0px 0px!important;}
+
+/*第三方支付登录*/
+.admine_loginbox{background: url(../images/admine_login.png) no-repeat 0px 0px!important;}
+/*大数据平台登录*/
+.admind_max_loginbox{background: url(../images/admine_max_login.png) no-repeat 0px 0px!important;}
+/*语音验证码平台登录*/
+.adming_loginbox{background: url(../images/adming_login.png) no-repeat 0px 0px!important;}
+/*语音验证码平台登录*/
+.adminh_loginbox{background: url(../images/adminh_login.png) no-repeat 0px 0px!important;}

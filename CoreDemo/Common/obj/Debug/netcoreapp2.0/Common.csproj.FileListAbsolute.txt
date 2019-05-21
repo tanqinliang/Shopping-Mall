@@ -1,9 +1,9 @@
 D:\git库\CoreDemo\Common\bin\Debug\netcoreapp2.0\Common.deps.json
 D:\git库\CoreDemo\Common\bin\Debug\netcoreapp2.0\Common.dll
 D:\git库\CoreDemo\Common\bin\Debug\netcoreapp2.0\Common.pdb
-D:\git库\CoreDemo\Common\obj\Debug\netcoreapp2.0\Common.csprojResolveAssemblyReference.cache
 D:\git库\CoreDemo\Common\obj\Debug\netcoreapp2.0\Common.csproj.CoreCompileInputs.cache
 D:\git库\CoreDemo\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfoInputs.cache
 D:\git库\CoreDemo\Common\obj\Debug\netcoreapp2.0\Common.AssemblyInfo.cs
 D:\git库\CoreDemo\Common\obj\Debug\netcoreapp2.0\Common.dll
 D:\git库\CoreDemo\Common\obj\Debug\netcoreapp2.0\Common.pdb
+D:\git库\CoreDemo\Common\obj\Debug\netcoreapp2.0\Common.csprojResolveAssemblyReference.cache

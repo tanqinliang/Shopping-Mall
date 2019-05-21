@@ -1,0 +1,340 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td { margin: 0; padding: 0; border: 0; outline: 0;}
+html {
+	width: 100%;
+	height: 100%;
+	background: #f5f6fa;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	font-family: PingFangSC-Regular, Microsoft YaHei, SimSun, Arial, Helvetica, Verdana, sans-serif!important;
+	color: #333;
+	font-size: 12px;
+	background-color: initial;
+	/*overflow: hidden;*/
+	overflow: auto;
+}
+ul,
+li {
+	list-style: none;
+	margin: 0;
+	padding: 0
+}
+
+i{
+	font-style: normal;
+}
+a { text-decoration: none; outline: none; cursor: pointer;}
+.float-left { float: left; }
+.float-right { float: right; }
+/*清除浮动*/
+.clearfix:after {
+  clear: both;
+  display: block;
+  visibility: hidden;
+  height: 0;
+  content: " ";
+  font-size: 0;
+}
+/*时间选择器共用样式*/
+.inputTimeSelect{
+	color: #333;
+	cursor: pointer;
+	width: 190px;
+	height: 36px;
+	background-color: #ffffff;
+	border-radius: 8px;
+	border: solid 1px #cccccc;
+	padding-left: 10px;
+	background: url(../Content/images/datepicker_icon.png) right center no-repeat #FFF;
+}
+.inputTimeSelect:focus{
+	outline: 0;
+	box-shadow: none;
+	border: solid 1px #039cfd;
+}
+/*************************/
+.childpage-main-comtent{
+	width: 100%; 
+	margin:0 auto;
+	padding:0 26px 26px 36px;
+    box-sizing: border-box;
+	min-width: 1000px;
+	/*border-radius: 8px;
+	background-color: #f5f6fa;*/
+}
+.layui-form-label{
+	width: 92px;
+	font-size: 14px;
+	color: #333;
+	padding: 9px 15px 9px 0;
+}
+.layui-form-item .layui-input-inline {
+    width: 210px;
+}
+font {
+    color: red;
+    font-family: "宋体";
+}
+
+.lauyibutton-width{
+	width: 88px;
+	height: 30px;
+	line-height: 30px;
+}
+.lauyi-width{
+	width: 140px;
+}
+
+#EditGroup-icon{
+	margin-top: 3px;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+}
+.editGroupEdit{
+	background: url(../../../Content/images/HomeTop/background.png) no-repeat;
+	background-position: -30px -299px;
+}
+.editGroupSave{
+	background: url(../../../Content/images/HomeTop/background.png) no-repeat;
+	background-position: -82px -299px;
+}
+#ImportContacts-mainleft{
+	background: url(../../../Content/images/HomeTop/background.png) no-repeat;
+	background-position: -189px -349px;
+}
+#ImportContacts-mainright{
+	background: url(../../../Content/images/HomeTop/background.png) no-repeat;
+	background-position: -83px -349px;
+}
+
+/*带!号图标组件统一样式:<p class="warningTipWrap"><i class="warningTipIcon"></i>当账户余额≤该预警金额时，系统自动发短信</p>*/
+.warningTipWrap{
+	position: relative;
+	margin-left: 20px;
+	font-size: 12px;
+	color: #999;
+}
+.warningTipIcon{
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	background: url(../../../Content/images/HomeTop/background.png) no-repeat;
+	background-position: -84px -176px;
+	margin-right: 4px;
+	position: absolute;
+	top: 0px;
+	left: -20px;
+}
+
+.warningTipIconblue{
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	background: url(../../../Content/images/HomeTop/background.png) no-repeat;
+	background-position: -84px -176px;
+	margin-left: 10px;
+	position: absolute;
+	top: 13px;
+	left: 0px;
+}
+
+.CretextareaTip{
+	color: #999;
+	margin-left: 20px;
+}
+
+/*蓝色按钮统一样式*/
+.bluebuttonCommonSty{
+	position: relative;
+	width: 140px;
+	height: 38px;
+	background-color: #0b7bff;
+	border-radius: 8px;
+	display: block;
+	font-size: 14px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 38px;
+	cursor: pointer;	
+}
+.bluebuttonCommonSty:hover{
+	background-color: #0069e5;
+}
+.bluebuttonCommonSty:active{
+	background-color: #005ecc;
+}
+
+/*白色按钮统一样式*/
+.whitebuttonCommonSty{
+	position: relative;
+	width: 140px;
+	height: 38px;
+	background-color: #fff;
+	border-radius: 8px;
+	display: block;
+	font-size: 14px;
+	color: #333;
+	text-align: center;
+	line-height: 38px;
+	cursor: pointer;	
+	border: solid 1px #cccccc;
+}
+.whitebuttonCommonSty:hover{
+	background-color: #f4f7fc;
+}
+.whitebuttonCommonSty:active{
+	background-color: #dcdfe4;
+}
+.layui-form-select dl dd.layui-this {
+    background-color: #0b7bff;
+}
+.layui-table thead tr{
+    background-color: #e6eaf2;
+}
+.layui-table td{
+	border-color: #ebecec;
+}
+.layui-table th{
+	border-color: #dedfdf;
+}
+.layui-table-page{
+	border-top: none;
+}
+.layui-table-init .layui-icon {
+    color: #fff;
+    background: url(http://ctc.qzonestyle.gtimg.cn/qzonestyle/qzone_client_v5/img/loading.gif) no-repeat;
+}
+/*.layui-table-cell {
+	font-size: 12px;
+}*/
+/*.layui-table-cell{
+   height:auto;
+   overflow:visible;
+   text-overflow:inherit;
+   white-space:normal;
+}*/
+/*带图标的按钮*/
+.semeuploadicon{
+	top: 7px;
+    position: absolute;
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+}
+/*上传*/
+.uploadfile{
+	background: url(../../../Content/images/HomeTop/background.png) no-repeat;
+	background-position: -136px -348px;
+}
+/*下载*/
+.loadFile{
+	background: url(../../../Content/images/HomeTop/background.png) no-repeat;
+	background-position: -30px -348px;
+}
+.buttonIcon{
+	margin-left: 26px;
+}
+
+.borderRadius8px{
+	border-radius: 8px;
+}
+
+.layui-input{
+	border-radius: 8px;
+}
+.layui-table-view table tbody td{
+	font-size: 12px;
+}
+.layui-table-view table tbody td .layui-table-cell{
+	height: auto;
+    line-height: 20px;
+}
+.layui-table-view table tbody td{
+	padding: 8px 0px!important;
+}
+/*行间距公用样式*/
+.rowMarginBottom{
+	margin-bottom: 24px;
+}
+.rowMarginBottomTop{
+	margin: 18px 0 24px 0;
+}
+/*每行行首左对齐的样式*/
+.rowTopfontleft{
+	width: auto;
+	padding-left: 0;
+}
+/*开始时间和结束时间共用*/
+.betweentimeEle{
+	color: #ccc;
+}
+.startAndEndTimeWrap{
+	width: 338px!important;
+}
+/**********************/
+.resetSeachBtnlay{
+	width: 100px;
+	background-color: #0b7bff;
+	border-radius: 8px;
+}
+.resetSeachBtnOwn{
+	width: 100px;
+}
+.buttonWidth120{
+	width: 120px;
+}
+.layui-btn-danger,.layui-btn-xs {
+    background-color: transparent;
+    color: #0b7bff;
+}
+.layui-btn-xs.layui-btn:hover {
+    opacity: .8;
+    filter: alpha(opacity=80);
+    color: #0b7bff;
+}
+.layui-table{
+	color: #666;
+}
+.layui-table-view .layui-table-header thead{
+	color: #333!important;
+}
+.layui-form-radio > i:hover, .layui-form-radioed > i {
+    color: #1e9fff;
+}
+/*跳转的i标签*/
+.linkToOtherpageI{
+	font-size: 14px;
+	color: #0b7bff;
+}
+.linkToOtherpageI:hover{
+	cursor: pointer;
+    color: #005ecc;
+}
+/*改变页码的样式*/
+.layui-laypage {
+    float: right;
+    margin-right: 20px;
+}
+.layui-laypage-em {
+    background-color: #0b7bff!important;
+}
+/************/
+.layui-form-checked[lay-skin=primary] i {
+    border-color: #0b7bff;
+    background-color: #0b7bff;
+    color: #fff;
+}
+
+.layui-form-checkbox[lay-skin=primary]:hover i {
+    border-color: #0b7bff;
+    color: #fff;
+}
+
+.inputTimeSelect{
+	width: 146px;
+}

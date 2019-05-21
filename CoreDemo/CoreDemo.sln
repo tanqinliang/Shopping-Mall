@@ -11,9 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DBAccess", "DBAccess\DBAcce
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{596E3EE1-16C1-40B2-BD9C-15AF15B86534}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User", "User\User.csproj", "{D4B5EC15-9C77-4005-B2DE-8C88E789C9D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "User", "User\User.csproj", "{D4B5EC15-9C77-4005-B2DE-8C88E789C9D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasePage", "BasePage\BasePage.csproj", "{68AD7F3D-A3E5-4A01-B78A-2B9BE8F9600C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasePage", "BasePage\BasePage.csproj", "{68AD7F3D-A3E5-4A01-B78A-2B9BE8F9600C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

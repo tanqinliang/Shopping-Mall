@@ -1,0 +1,122 @@
+.content_poke{width:950px;margin:10px auto;position:relative;}
+#tabpoke tr td img{display:block;}
+.pre {
+position: absolute;
+top: -10px;
+left: 0px;
+}
+
+#poke_top {
+position: absolute;
+top: 234px;
+_top: 236px;
+left: 148px;
+z-index: 1;
+height: 16px;
+width: 780px;
+font-size: 12px;
+text-align: center;
+}
+
+#poke_top ul {
+list-style: outside none none;
+height: 16px;
+padding: 4px 0;
+overflow: hidden;
+margin: 0;
+}
+
+#poke_top ul li {
+float: left;
+display: inline;
+margin: 2px 5px 2px 0;
+height: 14px;
+width: 255px;
+color: #FDFF57;
+}
+
+.poke_foot {
+text-align: left;
+color: #FDFF57;
+height: 36px;
+line-height: 36px;
+font-size: 14px;
+font-weight: bolder;
+position: absolute;
+left: 205px;
+top: 829px;
+_top: 831px;
+z-index: 9999;
+width: 700px;
+}
+
+.poke_swf {
+position: absolute;
+left: 9px;
+top: 138px;
+width: 934px;
+height: 800px;
+overflow: hidden;
+}
+
+.top_zleft {
+text-align: left;
+padding-top: 8px;
+line-height: 30px;
+font-size: 13px;
+padding-left: 40px;
+background: url(../game_poke/images/shop.jpg) no-repeat 0 10px;
+}
+
+.fen_yue {
+float: left;
+width: 180px;
+height: 30px;
+}
+
+.fen_touzhu {
+float: left;
+width: 180px;
+height: 30px;
+}
+
+.fen_yingqu {
+float: left;
+width: 92px;
+height: 30px;
+}
+
+.fen_but {
+text-align: center;
+float: left;
+width: 175px;
+height: 36px;
+}
+
+.but_shuaxin, .but_goumai {
+text-align: center;
+float: left;
+width: 87px;
+height: 36px;
+background: url(../game_poke/images/poke_but.png) no-repeat;
+}
+
+.but_shuaxin span, .but_goumai span {
+display: none;
+}
+
+.but_shuaxin {
+background-position: 0 0;
+}
+
+.but_shuaxin:hover {
+background-position: 0 -46px;
+}
+
+.but_goumai {
+background-position: 0 -93px;
+}
+
+.but_goumai:hover {
+background-position: 0 -139px;
+}

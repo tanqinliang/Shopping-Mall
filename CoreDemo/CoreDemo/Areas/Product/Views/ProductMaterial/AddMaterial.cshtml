@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewData["Title"] = "AddMaterial";
+    Layout = "~/Views/MasterPage/WebPage.cshtml";
+    Model.Product_Material MaterialInfo = ViewBag.MeaterialInfo;
+}
+
+<style>
+    .layui-inline {
+        margin-top: 20px;
+    }
+
+    .layui-form-text {
+        margin-top: 20px;
+    }
+
+    .CP-input-style {
+        width: 300px;
+    }
+
+    .ms-message-textarea {
+        width: 400px;
+    }
+</style>
+<div class="ImportContacts addNewmembers">
+    <form class="layui-form" action="">
+        <div class="Change-password-wrap">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">材质名称:</label>
+                    <div class="layui-input-inline">
+                        <input type="text" maxlength="50" id="Name" value="@MaterialInfo.Name" lay-verify="identity" placeholder="请输入" autocomplete="off" class="layui-input CP-input-style">
+                        <input type="hidden" id="ProductID" />
+                    </div>
+                </div>
+
+                <div class="layui-form-item layui-form-text" style="margin-bottom: 10px;">
+                    <label class="layui-form-label">备注：</label>
+                    <div class="layui-input-block">
+                        <div class="ms-message-textareaWrap">
+                            <textarea id="Details" placeholder="请输入备注内容" class="layui-textarea ms-message-textarea" maxlength="2000">@MaterialInfo.Details</textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+<script>
+
+    function Trim(str, is_global) {
+        var result;
+        result = str.replace(/(^\s+)|(\s+$)/g, "");
+        if (is_global.toLowerCase() == "g") {
+            result = result.replace(/\s/g, "");
+        }
+        return result;
+    }
+
+    function inputSapceTrim(e, this_temp) {
+        this_temp.value = Trim(this_temp.value, "g");
+        var keynum;
+        if (window.event) // IE
+        {
+            keynum = e.keyCode
+        }
+        else if (e.which) // Netscape/Firefox/Opera
+        {
+            keynum = e.which
+        }
+        if (keynum == 32) {
+            return false;
+        }
+        return true;
+    }
+
+</script>
+<script type="text/javascript">
+    var refreshGird; // 更新表格
+    var SearchParam = {};
+    var acceptClick;
+    var bootstrap = function ($, vso) {
+        "use strict";
+        var page = {
+            init: function () {
+                page.bind();
+                page.action();
+                page.initGird();
+            },
+            bind: function () {
+                layui.use(['form', 'layedit', 'laydate'], function () {
+                    var form = layui.form
+                        , layer = layui.layer
+                        , layedit = layui.layedit
+                        , laydate = layui.laydate;
+
+                });
+
+
+            },
+            action: function () {
+
+            },
+            initGird: function () {
+            },
+            search: function (param) {
+            }
+        };
+
+        acceptClick = function (callback) {
+            var vName = $("#Name").val();
+            var vDetails = $("#Details").val();
+
+            $.post("/Product/Ajax/SetProductMaterial", { ID: '@MaterialInfo.ID', Name: vName, Details: vDetails, IsEnable: true, r: Math.random() }, function (json) {
+                if (json.code == "-1") {
+                    top.vso.alert.error(json.msg);
+                }
+                else {
+                    if (!!callback) {
+
+                        callback();
+                    }
+                    top.vso.alert.success(json.msg);
+                    vso.layerClose(window.name);
+                }
+            });
+
+            return false;
+        };
+        // 保存数据后回调刷新
+        refreshGird = function () {
+            page.search();
+        }
+        page.init();
+    };
+</script>
+
+

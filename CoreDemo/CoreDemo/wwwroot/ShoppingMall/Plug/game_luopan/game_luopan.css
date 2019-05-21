@@ -1,0 +1,18 @@
+.content_luopan{width:950px;margin:10px auto;position:relative;}
+#Table_01 tr td img{display:block;}
+.luopan_bg { background: url(../game_luopan/images/luopan_05.jpg) no-repeat; width: 950px; height: 623px; }
+.pre { position: absolute; top: 200px; }
+ul.line, ul.mulitline { position: absolute; left: 34px; top: 252px; width: 170px; height: 140px; color: #F1781A; text-align: left; overflow: hidden; }
+ul.mulitline { height: 115px }
+ul.mulitline li { height: 30px; line-height: 16px; width: 165px; overflow: hidden; padding: 3px 0 6px 7px; background: url(../game_luopan/images/dian.gif) no-repeat 0px 9px; border-bottom: 1px dotted #843A00; }
+.top_zleft { text-align: left; padding-top: 8px; line-height: 30px; font-size: 13px; padding-left: 40px; background: url(../game_luopan/images/shop.jpg) no-repeat 0 10px; }
+.fen_right { text-align: left; font-size: 14px; color: #F1781A; font-weight: bolder; position: absolute; right: 32px; top: 252px; width: 170px; height: 65px; z-index: 1; overflow: hidden; }
+.fen_right a { color: #fff; }
+.fen_right a:hover { color: #F1781A; }
+.luopan_swf { position: absolute; left: 110px; top: 180px; width: 720px; height: 720pxpx; overflow: hidden; }
+.fen_right li { height: 22px; line-height: 22px; list-style: none; }
+object:focus { outline: none; }
+.flashContent { display: none; }
+.locd { text-align: left; margin-right: 5px; }
+
+

@@ -1,0 +1,69 @@
+﻿.header{background:#fff;width:100%;border-bottom:1px solid #e0e0e0;height:99px;line-height:99px;}
+.content_top{width:1000px;margin:0 auto;}
+.content_top h1{height:99px;line-height:99px;display: inline-block;float:left;}
+.content_top h1 img{margin-top:4px;}
+.v-line{border-right:1px solid #eee;height:30px;display: inline-block;vertical-align: middle;margin-left:20px;}
+.header-title-01{display: inline-block;vertical-align: middle;font-family: "Microsoft YaHei";font-weight: normal;font-size: 18px;color: #333;margin-left: 17px;}
+.header-title-02 a:hover{color:#ff5b20;}
+.content_body{width:938px;background: #FFFFFF;border: 1px solid #e0e0e0;margin: 15px auto;padding:30px;overflow: hidden;}
+.reg-left-title a{font-size:16px;color:#333;font-family: "Microsoft YaHei";}
+.reg-left{float:left;}
+.ref-v-line{border-right:1px solid #e0e0e0;height:16px;display:inline-block;margin:0 10px 0 10px;vertical-align: -3px;}
+.reg-left-title a.active{color: #ff5b20;border-bottom: 2px solid #ff5b20;font-weight: bold;line-height: 26px;height: 30px;display: inline-block;}
+.reg-left-title a:hover{text-decoration:none;color:#ff5b20;}
+.reg-phone{width:450px;}
+.reg-phone label{font-family: "Microsoft YaHei";font-size:14px;color:#494948;text-align:right;width: 98px;display: inline-block;}
+.reg-phone input.inputText{font-family: "Microsoft YaHei";font-size:14px;color:#000;width:318px;height:38px;line-height:38px;border:1px solid #e0e0e0;text-indent: 12px;}
+.reg-phone p{margin-bottom:3px;}
+.reg-phone span.textTip{ display:block;width: 320px;margin-left:105px;margin-top: 5px;font-size: 12px;height:16px;line-height: 16px;padding-left:22px;color:#ccc;}
+.reg-phone input.inputText.w_120{width:120px;}
+.chkauto{margin-left: 102px;color:#888;}
+.submitBox{margin-left: 102px;margin-top: 23px;}
+.submitReg{width:320px;}
+.reminder{color:#FF8448;margin-left:50px}
+.reminder2{color:#FF8448;margin-left:50px;}
+.reg_mintitle{clear: both;margin: 5px 28px 0 0;float: right;}
+.regbox-v-line{border-right:1px solid #eee;height:650px;float:left;margin-left:30px;}
+.regbox-v-line.ml50{margin-left:50px;}
+.reg-right{width: 400px;float: right;}
+.m_gg li {float: left;margin-bottom: 30px;}
+.m_gg img {float: left;padding-top: 5px;margin-right: 15px;}
+.m_gg p {font-size: 12px;color: #888;}
+.m_gg strong {font-size: 14px;color: #333;}        
+.regbox-v-line.w_400{height:400px;}
+.login-bottom-tip{padding: 70px 0 45px 0;}
+.goCheck{width:120px;display:inline-block;text-align:center;font-size:16px;margin-top:30px;}
+.goCheck:hover{text-decoration:none;}
+#emailCheck{width:420px;height:240px;}
+#emailCheck p{text-align:center;font-size: 14px;color: #333;}
+.btn-content{margin-top:50px;}
+.regGetInfo{width: 300px;margin: 10px 0 0 413px;}
+.regGetInfo{font-size:14px;color:#494948;}
+.regGetInfo span{color:#ff5b20;}
+.regTipText {font-size: 14px;color: #494948;text-align:center;margin-top: 50px;padding-bottom:100px;}
+.popTitle{color:#333;border-bottom:1px solid #e0e0e0;font-size:18px;padding:20px 0 6px 20px;}
+.content_Pop_body{background:#fff;width:460px;position:relative;overflow: hidden;padding-bottom: 32px;}
+.findPassTile0{background: url(../images/user/find_ico.png) no-repeat -51px -441px;width: 685px;height: 56px;margin: 20px auto;}
+.pass_frame {margin: 0 auto;margin-top: 80px;padding-bottom: 120px;overflow: hidden;width: 690px;}
+.pass_mail {position: relative;margin: 0 45px 0 0;width: 322px;height: 122px;background: url(../images/user/find_ico.png) no-repeat -11px -87px;float: left;cursor:pointer;}
+.pass_mail.mtrl0{margin:0;}
+.pass_mail span a {width: 322px;height: 122px;display: block;left: 0px;top: 0px; position: absolute;}
+.pass_mail:hover {background: url(../images/user/find_ico.png) no-repeat -343px -86px;}
+.pass_img { float:left;margin: 30px 10px 0 20px;}
+.pass_txt p { padding:0px; margin:0px; color:#666; }
+.pass_txt { padding-left:10px; float:left; }
+.pass_txt a{ font-size:18px; margin:0px; padding:0px;color:#333;margin-top: 22px;display:inline-block;text-decoration:none;}
+.pass_txt p{font-size:14px;color:#888;line-height: 20px;}
+.pass_img_01{background: url(../images/user/find_ico.png) no-repeat -10px -11px;width: 61px;height: 61px;display:inline-block}
+.pass_img_02{background: url(../images/user/find_ico.png) no-repeat -85px -10px;width: 62px;height: 62px;display:inline-block}
+.findPassTile1{background: url(../images/user/find_ico.png) no-repeat -51px -379px;}
+.pass_box {padding: 50px 0 80px 0;margin: 0 auto;}
+.findPassTile2{background: url(../images/user/find_ico.png) no-repeat -51px -306px;}
+.sec_issue{font-size:14px;color:#000;}
+.findPassTile3{background: url(../images/user/find_ico.png) no-repeat -51px -236px;width: 689px;}
+.sendEmailTip{width: 465px;margin: 15px 0 0 310px;font-size: 14px;color: #333;margin-top: 15px;padding-bottom: 85px;}
+.sendCheckTip{font-size:14px;color:#333;margin-bottom: 5px;display: inline-block;}
+.reg-phone label.w_126{width:126px;}
+.sendMobileTip{margin: 15px 0 0 410px;}
+.reset_title{font-size:14px;color:#333;border-bottom: 1px solid #e0e0e0;height: 28px;padding-left: 5px;}
+.submitok{width:120px;margin-left:28px;}

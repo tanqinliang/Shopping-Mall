@@ -1,0 +1,28 @@
+﻿{
+  "code": "200",
+  "msg": "",
+  "data": [
+    {
+      "Expanded": false,
+      "IsLeaf": false,
+      "ParentID": 0,
+      "Url": "",
+      "Icon": "iconfont icon-shouye",
+      "ID": 1,
+      "Name": "商品管理",
+      "ParentName": "",
+      "Permission": ""
+    },
+    {
+      "Expanded": false,
+      "IsLeaf": true,
+      "ParentID": 1,
+      "Url": "/Product/ProductType/Index",
+      "Icon": "",
+      "ID": 11,
+      "Name": "商品类型",
+      "ParentName": "商品类型",
+      "Permission": "AppManageList"
+    }
+  ]
+}

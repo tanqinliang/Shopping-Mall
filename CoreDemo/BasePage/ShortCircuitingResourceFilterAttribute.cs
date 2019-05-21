@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace VSOFO.BasePage
+namespace BasePage
 {
     public class ShortCircuitingResourceFilterAttribute : IResourceFilter
     {

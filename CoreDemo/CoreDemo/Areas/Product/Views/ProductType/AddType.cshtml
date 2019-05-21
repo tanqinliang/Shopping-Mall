@@ -1,0 +1,107 @@
+﻿
+@{
+    ViewData["Title"] = "AddType";
+    Layout = "~/Views/MasterPage/WebPage.cshtml";
+}
+
+<div class="ImportContacts addNewmembers">
+    <form class="layui-form" action="">
+        <div class="Change-password-wrap">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">商品类型:</label>
+                    <div class="layui-input-inline">
+                        <input type="text" maxlength="50" id="ProductTypeTitle" value="@(Model.Title)" lay-verify="identity" placeholder="请输入" autocomplete="off" class="layui-input CP-input-style">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </form>
+</div>
+<script>
+
+    function Trim(str, is_global) {
+        var result;
+        result = str.replace(/(^\s+)|(\s+$)/g, "");
+        if (is_global.toLowerCase() == "g") {
+            result = result.replace(/\s/g, "");
+        }
+        return result;
+    }
+
+    function inputSapceTrim(e, this_temp) {
+        this_temp.value = Trim(this_temp.value, "g");
+        var keynum;
+        if (window.event) // IE
+        {
+            keynum = e.keyCode
+        }
+        else if (e.which) // Netscape/Firefox/Opera
+        {
+            keynum = e.which
+        }
+        if (keynum == 32) {
+            return false;
+        }
+        return true;
+    }
+
+</script>
+<script type="text/javascript">
+    var refreshGird; // 更新表格
+    var SearchParam = {};
+    var acceptClick;
+    var bootstrap = function ($, vso) {
+        "use strict";
+        var page = {
+            init: function () {
+                page.bind();
+                page.action();
+                page.initGird();
+            },
+            bind: function () {
+                layui.use(['form', 'layedit', 'laydate'], function () {
+                    var form = layui.form
+                        , layer = layui.layer
+                        , layedit = layui.layedit
+                        , laydate = layui.laydate;
+
+
+
+                });
+            },
+            action: function () {
+
+            },
+            initGird: function () {
+            },
+            search: function (param) {
+            }
+        };
+
+        acceptClick = function (callback) {
+            var vProductTypeTitle = $.trim($("#ProductTypeTitle").val());
+
+            $.post("/Product/Ajax/SetProductType", { Title: vProductTypeTitle, IsEnable: true, r: Math.random() }, function (json) {
+                if (json.code == "-1") {
+                    top.vso.alert.error(json.msg);
+                }
+                else {
+                    if (!!callback) {
+                        callback();
+                    }
+                    top.vso.alert.success(json.msg);
+                    vso.layerClose(window.name);
+                }
+            });
+
+            return false;
+        };
+        // 保存数据后回调刷新
+        refreshGird = function () {
+            page.search();
+        };
+        page.init();
+    };
+</script>

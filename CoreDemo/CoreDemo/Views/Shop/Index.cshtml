@@ -1,0 +1,91 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/MasterPage/ShopPage.cshtml";
+}
+@using System.Data;
+<style>
+    .a_center {
+        border-radius: 13px;
+        text-align: center;
+    }
+
+    .a_background_color {
+        background-color: darkorange;
+    }
+</style>
+<div class="content_sub">
+    <dl>
+        <dd>
+            <ul class="sideleft">
+                <li>
+                    <strong style="font-size:17px;line-height:45px;color:#595958;">商品类型：</strong>
+                    <div>
+                        @foreach (var item in ViewBag.ProductType)
+                        {
+                            <a class="a_center" title="@item["Title"]">@item["Title"]</a>
+                        }
+
+                    </div>
+                    <span class="clear"></span>
+                </li>
+            </ul>
+        </dd>
+    </dl>
+    <dl>
+        <dd>
+            <ul class="sideleft">
+                <li>
+                    <strong style="font-size:17px;line-height:45px;color:#595958;">商品材料：</strong>
+                    <div>
+                        @foreach (var item in ViewBag.ProductMaterial)
+                        {
+                            <a class="a_center" title="@item["Name"]" href="">@item["Name"]</a>
+                        }
+                    </div>
+                    <span class="clear"></span>
+                </li>
+            </ul>
+        </dd>
+    </dl>
+</div>
+@foreach (var ProductType in ViewBag.HomeTopProductType)
+{
+    <div class="titlebox">
+        <span style="width: 213px;height: 20px;display: block;margin: 0 auto;">--------------<span style="font-size:20px;font-weight:900;">@ProductType["Title"]</span>--------------</span>
+
+        <a href="" class="con_more">更多></a>
+    </div>
+    <div class="content_sub">
+        @{
+            DataRow[] drProduct = new BLL.Product_Info().GetHomeTopList().Select($"ProductType={ProductType["ID"]}");
+            if (drProduct.Count() > 0)
+            {
+                <div class="game_max_img">
+                    <a href="/Shop/ProductDetail?ProductID=@drProduct[0]["ID"]" target="_blank">
+                        <img class="scrollLoading" data-url="@($"{drProduct[0]["Image"]}{drProduct[0]["ID"]}.png")" src="@($"{drProduct[0]["Image"]}{drProduct[0]["ID"]}.png")" />
+                        <div style="margin:0 auto;text-align:center;">@drProduct[0]["ProductName"]</div>
+                    </a>
+                </div>
+
+            }
+            <ul class="game_list">
+                @for (int i = 1; i < drProduct.Count(); i++)
+                {
+                    <li>
+                        <a href="/Shop/ProductDetail?ProductID=@drProduct[i]["ID"]" target="_blank">
+                            <span class="game_img"><img class="scrollLoading" data-url="@($"{drProduct[i]["Image"]}{drProduct[i]["ID"]}.png")" /></span>
+                            <span class="game_title">@drProduct[i]["ProductName"]</span>
+
+                        </a>
+                    </li>
+
+                }
+
+            </ul>
+
+        }
+
+    </div>
+}
+
+

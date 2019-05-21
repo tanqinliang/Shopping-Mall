@@ -93,14 +93,14 @@ namespace DAL
 		/// </summary>
 		/// <param name="iID">要得到的信息ID</param>
 		/// <returns></returns>
-		public Model.User_Info GetRecordInfo(int iID)
+		public Model.User_Info GetRecordInfo(string sAccount)
 		{
 			Model.User_Info obj = new Model.User_Info(); 
 			string sql = "cp_User_Info_GetRecordInfo";	
 			_db.CreateConnection(_connectstring);
 			_db.CreateCommand(sql,CommandType.StoredProcedure);
 
-			_db.AddParameter("ID" ,iID)  ;
+			_db.AddParameter("Account", sAccount)  ;
 			using (DbDataReader reader = _db.ExecuteReader())
 			{
 				if (reader.Read())

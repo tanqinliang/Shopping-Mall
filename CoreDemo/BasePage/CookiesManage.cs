@@ -89,7 +89,7 @@ namespace BasePage
         }
 
         /// <summary>
-        /// 清初登陆Cookies
+        /// 清除登陆Cookies
         /// </summary>
         public static void Clear(this HttpContext context)
         {
@@ -97,7 +97,7 @@ namespace BasePage
         }
 
         /// <summary>
-        /// 清初登陆Cookies
+        /// 清除登陆Cookies
         /// </summary>
         public static void Clear(this HttpContext context, string sAuthenticationScheme)
         {

@@ -1,0 +1,125 @@
+﻿html { font-family:"微软雅黑", "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; font-size: 62.5%; }
+body { margin: 0; font-size:1.4rem; line-height: 20px; color: #333; height: 100%; overflow-x: hidden; -webkit-overflow-scrolling: touch;}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary { display: block; }
+a { background: transparent; text-decoration: none; color: #000; }
+a:active { outline: 0; }
+b, strong { font-weight: bold; }
+dfn { font-style:normal;}
+img { border: 0; vertical-align: middle;max-width: 100%; }
+button,input[type="button"],input[type="reset"],input[type="submit"],textarea{cursor:pointer;-webkit-appearance:button;-moz-appearance:button;outline:none;}
+input:focus:-moz-placeholder,input:focus::-webkit-input-placeholder {color:transparent}
+button::-moz-focus-inner,input::-moz-focus-inner { padding:0; border:0}
+::-webkit-input-placeholder { color:#c8c8c8; }
+::-moz-placeholder { color:#c8c8c8; } /* firefox 19+ */
+:-ms-input-placeholder { color:#c8c8c8; } /* ie */
+input:-moz-placeholder { color:#c8c8c8; }
+input,textarea,button { border: 0; margin: 0; padding: 0; font-family:"微软雅黑", "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;}
+textarea { resize: none;}
+table { border-collapse: collapse; border-spacing: 0; }
+td, th { padding: 0; }
+h1, h2, h3, h4, h5, h6, p, figure, form, blockquote { margin: 0; }
+ul, ol, li, dl, dd { margin: 0; padding: 0; }
+ul, ol { list-style: none; }
+input::-moz-placeholder, textarea::-moz-placeholder { color: #ccc; }
+input:-ms-input-placeholder, textarea:-ms-input-placeholder { color: #ccc; }
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #ccc; }
+.clearfix:after { content:"."; display:block; height:0; clear:both; visibility:hidden;}
+.clearfix { clear:both;}
+.border-radius5 {border-radius: 5px;-moz-border-radius: 5px; -webkit-border-radius:5px;}
+.border-radius10{border-radius: 10px;-moz-border-radius: 10px; -webkit-border-radius:10px;}
+.border-radius2{border-radius: 2px;-moz-border-radius: 2px; -webkit-border-radius:2px;}
+.border-radius100{border-radius: 100%;-moz-border-radius: 100%; -webkit-border-radius:100%;}
+.mt20{margin-top:20px;}
+.mt25{margin-top:25px;}
+.color_3879D9{color:#3879D9;}
+.text_underline{text-decoration: underline;}
+.inline-block{display:inline-block;}
+.ml3{margin-left:3px;}
+.ml5{margin-left:5px;}
+.mt3{margin-top:3px;}
+.ml10{margin-left:10px;}
+.ml15{margin-left:15px;}
+.ml20{margin-left:20px;}
+.ml50{margin-left:50px;}
+.ml18{margin-left:18px;}
+.mt5{margin-top:5px;}
+.mt10{margin-top:10px;}
+.mt28{margin-top:28px;}
+.mt15{margin-top:15px;}
+.pl12{padding-left:12px;}
+.color_ff4700{color:#ff4700;}
+.color_666{color:#666;}
+.float-left{float:left;}
+.float-right{float:right;}
+.bgcolor_ff4700{background:#ff4700;}
+.text-center{text-align:center;}
+.font-family-Arial{font-family:Arial;}
+.font-family-Georgia{font-family:Georgia;}
+.font-size12{font-size:12px;}
+.font-size16{font-size:16px;}
+.font-size24{font-size:24px;}
+.color_ec0d22{color:#ec0d22;}
+.font-size18{font-size:18px;}
+.font-family-Heiti{font-family:'Adobe Heiti Std';}
+.color_333{color:#333;}
+.color_999{color:#999;}
+.line-height18{line-height:18px;}
+.line-height24{line-height:24px;}
+.mt12{margin-top:12px;}
+.font-size14{font-size:14px;}
+.mr3{margin-right:3px;}
+.overflow-hidden{overflow:hidden;}
+.mlr3{margin:0 3px 0 3px;}
+.fbold{font-weight:bold;}
+.mlr15{margin:0 15px 0 15px;}
+.color_99cc66{color:#99cc66;}
+.line-height22{line-height:22px;}
+.mt13{margin-top:13px;}
+.color_3399ff{color:#3399ff;}
+.ml150{margin-left:150px;}
+.line-height30{line-height:30px;}
+.mt40{margin-top:40px;}
+.vertical-align-2{vertical-align:-2px;}
+.text-left{text-align:left;}
+.line-height70{line-height:70px;}
+.bgcolor_e2e2e2{background-color:#e2e2e2;}
+.mt30{margin-top:30px;}
+.color_ff6700{color:#ff6700;}
+.font-size20{font-size:20px;}
+.vertical-align-center{vertical-align:middle}
+.mlr5{margin:0 5px;}
+.mt50{margin-top:50px;}
+.font-family-YaHei{font-family:"Microsoft YaHei";}
+.text-indent20{text-indent:20px;}
+.font-size26{font-size:26px;}
+.ml25{margin-left:25px;}
+.ml30{margin-left:30px;}
+/*弹窗 关闭按钮样式*/
+.closebox:hover{background-position:-99px -43px;}
+.boxTitle{border-bottom:1px solid #e0e0e0;width:100%;position:relative;height: 40px;line-height: 40px;}
+.boxTitle span{color:#333;font-size:18px;margin-left:15px;}
+#divbacing{position:fixed;width:100%;height:100%; background:#000; top:0;left:0;z-index:9999;opacity:0.6;filter:alpha(opacity=60);display:none;}
+/*分页*/
+.m-page { height: 37px; margin: 20px 0; float: right; overflow: hidden; padding: 10px 0 0; position: relative; }
+.m-page li { position: relative; float: left; margin-left: -1px; width: 40px; border: solid 1px #dbdee6; background: #fff; height: 30px; color: #333; text-align: center; line-height: 30px; cursor: pointer; font-size: 14px;margin-right:5px; }
+.m-page li a { position: relative; z-index: 1; display: inline-block; width: 100%; text-decoration: none; color: #666666; }
+.m-page li a:hover{color:#ff4701;}
+.m-page li.next a:hover,.m-page li.prev a:hover{color:#333;}
+.m-page li:hover { z-index: 1; border: 1px solid #ff4701;}
+.m-page li a.prev-next:hover { color: #3e3e3e }
+.m-page .dot { border: none; line-height: 37px; width: 24px; cursor: default; background: transparent }
+.m-page .dot:hover { color: #3e3e3e; border: 0 }
+.m-page .prev, .m-page .next { width: 70px; font-weight: 400 }
+.m-page .prev { margin-right: 6px; margin-left: 0 }
+.m-page .next { margin-left:0px }
+.m-page .dot+.next { margin-left: -1px }
+.m-page .disabled { color: #ccc; cursor: default; }
+.m-page .disabled:hover { color: #ccc; border: 1px solid #dbdee6 }
+.m-page .active, .m-page .active:hover { position: relative; z-index: 1; background: #ff4701; color: #fff; border-color: #ff4701; cursor: default; text-decoration: none }
+.icon-btn-next, .icon-btn-prev, .icon-btn-next-disabled, .icon-btn-prev-disabled { background: url(../images/ico_page.png) no-repeat; display: inline-block; font-size: 0; height: 9px; width: 6px; }
+.icon-btn-next { background-position: -18px 0; margin-left: 5px; }
+.icon-btn-prev { background-position: 0 0; margin-right: 5px; }
+.icon-btn-next-disabled { background-position: -18px -13px; margin-left: 5px; color: #ccc }
+.icon-btn-prev-disabled { background-position: 0 -13px; margin-right: 5px; color: #ccc }
+
+

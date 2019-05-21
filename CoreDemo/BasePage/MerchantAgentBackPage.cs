@@ -1,21 +1,19 @@
 ﻿/***************************************************************
  * Author       :谭清亮
  * Date         :2018-04-19
- * Description  :代理商后台BagePage类
+ * Description  :后台BagePage类
 ***************************************************************/
 using System;
 using System.Collections.Generic;
-using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
-using System.Configuration;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using System.Data;
 using Microsoft.AspNetCore.Mvc.Filters;
-using Soholife.Common;
+using Common;
 
-namespace VSOFO.BasePage
+namespace BasePage
 {
     public class MerchanAgentCookies
     {
@@ -24,7 +22,6 @@ namespace VSOFO.BasePage
         public string Account { get; set; }					    //管理员帐号
         public string ShowName { get; set; }					//显示名称		    
         public string LoginValidate { get; set; }                   //安全校验码
-        public int MerchantID { get; set; }                       //商户编码
 
         public MerchanAgentCookies()
         {
@@ -32,7 +29,6 @@ namespace VSOFO.BasePage
             Account = "";
             ShowName = "";
             LoginValidate = "";
-            MerchantID = 0;
         }
     }
 
@@ -46,7 +42,7 @@ namespace VSOFO.BasePage
         /// <summary>
         /// 得到当前C0OKIE的3DES密匙
         /// </summary>
-        private static string Key = "";     //当前记录要从数据库中获取,12341ADS%^34123
+        private static string Key = "";
 
         protected const string LOGIN_VALIDATE_COOKIENAME = "LoginValidateCode";
         /// <summary>
@@ -57,26 +53,16 @@ namespace VSOFO.BasePage
         /// <summary>
         /// 下载的application类型
         /// </summary>
-        public static string DownloadContenType ="application/vnd.android.package-archive";
-        
+        public static string DownloadContenType = "application/vnd.android.package-archive";
+
         public string GetIP()
         {
             return RequetUtils.GetIP(Request, HttpContext);
-        }
-
-        public void SetInfo(HttpContext httpContext)
-        {
-            httpContext.SetInfo(uc);
         }
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             uc = HttpContext.GetInfo<MerchanAgentCookies>();
             base.OnActionExecuting(context);
-        }
-
-        public void AddLog(string sContent, string strLogItem)
-        {
-            new DB.Suppliers_Log.BLL.Log_AdminLog().AddRecord(uc.AdminID, uc.Account, "代理用户ID：" + uc.AdminID + "，内容：" + sContent, RequetUtils.GetIP(Request, HttpContext), VSOFO.ConstValue.LogType.AGENT_BACKPAGE);
         }
 
         /// <summary>
@@ -92,10 +78,6 @@ namespace VSOFO.BasePage
                 iList.Add(i);
             }
             return iList;
-        }
-        public bool IsConfig()
-        {
-            return (new VSOFO.DB.Suppliers.BLL.Agent_User().GetRecordInfo(this.uc.MerchantID).ConfigPriceType == 1);
         }
         /// <summary>
         /// 获取月列表
@@ -146,56 +128,35 @@ namespace VSOFO.BasePage
             return Json(model, new JsonSerializerSettings() { ContractResolver = new DefaultContractResolver() });
         }
 
-
         /// <summary>
-        /// 得到开通的渠道
+        /// 返回前端表格数据
         /// </summary>
-        public string GetChannel()
-        {
-            DB.Suppliers_Agent.Model.User_List uList = new DB.Suppliers_Agent.BLL.User_List().GetRecordInfo(uc.AdminID);
-            int iUserID = 0;
-            if (uList.AdminID == 0)
-            {
-                iUserID = uc.AdminID;
-            }
-            else
-            {
-                iUserID = uList.AdminID;
-            }
-            DataTable dt = new DB.Suppliers_Agent.BLL.User_Channel().GetRecordList(iUserID);
-            string sChannelList = "-1,";
-            foreach (DataRow item in dt.Select("UserID>0"))
-            {
-                sChannelList += item["ID"] + ",";
-            }
-            return sChannelList.TrimEnd(',');
-        }
-
-        /// <summary>
-        /// 得到开通的网站
-        /// </summary>
+        /// <param name="dt">源数据</param>
         /// <returns></returns>
-        public string GetMerchatn()
+        public JsonResult ReturnGridData<T>(DataTable dtTable,int iCount)
         {
-            VSOFO.DB.Suppliers_Agent.Model.User_List uList = new DB.Suppliers_Agent.BLL.User_List().GetRecordInfo(uc.AdminID);
-            int iUserID = 0;
-            if (uList.AdminID == 0)
-            {
-                iUserID = uc.AdminID;
-            }
-            else
-            {
-                iUserID = uList.AdminID;
-            }
-            DataTable dt = new VSOFO.DB.Suppliers_Agent.BLL.User_Merchant().GetRecordList(iUserID);
-            string sChannelList = "-1,";
-            foreach (DataRow item in dt.Rows)
-            {
-                sChannelList += item["MerchantID"] + ",";
-            }
-            return sChannelList.TrimEnd(',');
+            //给对象赋值
+            LayerUiTableBase<T> layerUiTable = new LayerUiTableBase<T>() {
+                count= iCount,
+                data = dtTable.GetDataList<T>()
+            };
+            //返回json格式数据
+            return Json(layerUiTable, new JsonSerializerSettings() { ContractResolver = new DefaultContractResolver() });
         }
-
 
     }
+
+    public class LayerUiTableBase<T>
+    {
+        public int code = 0;
+
+        public string msg = "";
+
+        public int count = 0;
+
+        public List<T> data = new List<T>();
+    }
+
+
+
 }

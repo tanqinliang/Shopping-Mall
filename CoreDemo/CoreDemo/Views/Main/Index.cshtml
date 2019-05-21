@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewData["Title"] = "宽建门窗";
+    Layout = "~/Views/MasterPage/WebPage.cshtml";
+}
+<link href="~/css/pace/pace-theme-loading-bar.css" rel="stylesheet" />
+<link href="~/css/font/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+<link href="~/lib/jquery/plugin/toastr/toastr.css" rel="stylesheet" />
+<link href="~/css/font/css/home.css" rel="stylesheet" />
+<link href="~/css/font/fonts/leftmenu/iconfont.css" rel="stylesheet" />
+<script src="~/css/pace/pace.min.js"></script>
+<script src="~/js/signalr/jquery.signalR-2.2.2.min.js"></script>
+<script src="~/js/childrenPageCommon.js"></script>
+
+
+<body class="Chrome 70.0 uitheme-accordion">
+    <div class="loadbg" id="loadbg"></div>
+    <link href="~/css/font/css/body.css" rel="stylesheet" />
+    <div class="frame-top" style="min-width: 1200px">
+        <a class="logo-title" href="/"><img src="" /></a>
+    </div>
+
+    <div class="frame-menu"><div class="frame-menu-wrap" id="frame_menu"></div></div>
+    <div class="frame-tabs" style="min-width: 1200px">
+        <div class="frame-tabs-wrap">
+            <ul id="frame_tabs_ul"></ul>
+        </div>
+    </div>
+    <div class="frame-main" id="frame_main" style="min-width: 1200px">
+        <div class="crumbs">
+            <p><span id="parentsName"></span><span id="secondMenu"></span><span id="current_pos">首页</span></p>
+        </div>
+        <iframe name="right" id="rightMain" src="/Product/ProductType/Index" frameborder="false" scrolling="auto" style="border: none; height: 92%;" width="100%" allowtransparency="true"></iframe>
+
+    </div>
+
+    <script src="~/css/bootstrap/bootstrap.min.js"></script>
+    <script src="~/lib/jquery/plugin/layer/layer.js"></script>
+    <script src="~/lib/jquery/jquery.md5.min.js"></script>
+    <script src="~/lib/jquery/plugin/toastr/toastr.min.js"></script>
+    <script src="~/js/onload.js"></script>
+    <script type="text/javascript">
+
+        //退出登录
+        $("#LogOut").on('click', function () {
+            location.href = '/Admin/LogOut';
+        });
+
+
+    </script>
+</body>

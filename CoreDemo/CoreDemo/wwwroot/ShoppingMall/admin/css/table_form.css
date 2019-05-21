@@ -1,0 +1,29 @@
+﻿.header .logo { background: url(../images/logo.png) no-repeat; }
+.header .admin_logo { background: url(../images/admin_logo.png) no-repeat; }
+.header .adminb_logo { background: url(../images/adminb_logo.png) no-repeat; }
+.header .adminc_logo { background: url(../images/admin_logo_01.png) no-repeat;}
+.header .admine_logo { background: url(../images/third_logo.png) no-repeat;}
+.header .adminh_logo { background: url(../images/adminh_max_logo.png) no-repeat;}
+/*欢迎页*/
+.w_icon { }
+.w_ibox { }
+.w_ibox dl { float: left; margin: 20px; height: 104px; border: 1px solid #e5e5e5; background: #F7FBFC; border-radius: 8px; padding: 20px; }
+.w_ibox dl:hover { background: #EEE }
+.w_ibox dt { float: left; }
+.w_ibox dd { width: 260px; padding-left: 30px; font-size: 14px; line-height: 26px; }
+.w_ibox dd h3 { width: 260px; }
+.w_ibox dd li { float: left; width: 120px; margin-right: 10px; }
+.linkbox a { background: -moz-linear-gradient(center top, #33BBEE, #2288CC) repeat scroll 0 0 rgba(0, 0, 0, 0); background: #2288CC; border: 1px solid #1C6A9E; color: #FFFFFF; text-shadow: -1px -1px 1px #1C6A9E; border-radius: 5px; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7), 0 -1px 0 rgba(0, 0, 0, 0.09); cursor: pointer; letter-spacing: 2px; display: inline-block; padding: 0 6px; text-align: center; transition: box-shadow 0.2s linear 0s; width: auto; height: 22px; line-height: 22px; }
+.linkbox a:hover { text-decoration: none; }
+/*供货平台*/
+.hzsh_logo {background: url(../images/g_adminb_logo.png) no-repeat!important;}
+/*合作商户*/
+.header .admind_logo{background: url(../images/admind_logo.png) no-repeat;}
+/*大数据平台*/
+.header .admind_max_logo{background: url(../images/admind_max_logo.png) no-repeat;}
+/*语音验证码*/
+.header .adming_logo { background: url(../images/yzm_logo.png) no-repeat;}
+/*语音验证码商户后台*/
+.header .adminghzsh_logo { background: url(../images/yzm_logo_hzsh.png) no-repeat;}
+/*电话钱包官网后台*/
+.powerList li{float: left;width: 200px;margin-right: 20px;}

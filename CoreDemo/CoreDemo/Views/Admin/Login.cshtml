@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/MasterPage/WebPage.cshtml";
+}
+<script type="text/javascript">
+    if (window != top) {
+        top.location.href = location.href;
+    }
+</script>
+
+<link href="~/css/font/css/login.css" rel="stylesheet" />
+<link href="~/css/tip.css" rel="stylesheet" />
+<script src="~/js/tip.js"></script>
+<div class="content-wrap">
+    <div class="login-form">
+        <div class="loginform-wrap">
+            <p class="login-title">账号登录</p>
+            <div class="input-item ">
+                <input maxlength="50" id="username" type="text" placeholder="账户" value="">
+            </div>
+            <div class="input-item">
+                <input maxlength="20" id="password" type="password" placeholder="密码" value="">
+            </div>
+            <div class="input-item" style="display:block;">
+                <input id="verifycode_input"  maxlength="4" type="text" placeholder="图片验证码">
+                <div style="height: 36px;width: 110px;position: absolute;right: 5px;top: 4px;">
+                    <img id="verifycode_img" src="/Admin/Validatepic" alt="看不清？点击更换" title="点击切换验证码" data-src="/Admin/Validatepic" onclick="this.src = $(this).attr('data-src') + '?r=' + Math.random()" style="vertical-align:middle;" />
+                </div>
+            </div>
+            <button id="login" onclick="Onlogin()" type="button"><span>登录</span></button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function Onlogin() {
+        
+        var acc = $("#username").val();
+        var pwd = $("#password").val();
+        var code = $("#verifycode_input").val();
+
+        if (acc.length == 0) {
+            $.fail("用户名不能为空");
+            $("#username").focus();
+            return;
+        }
+        if (pwd.length == 0) {
+            $.fail("密码不能为空");
+            $("#password").focus();
+            return;
+        }
+        if (code.length == 0) {
+            $.fail("验证码不能为空");
+            $("#verifycode_input").focus();
+            return;
+        }
+
+        $.getJSON("/ajax/index", { acc: acc, pwd: pwd, code: code, r: Math.random() }, function (json) {
+            if (json.code == "-1") {
+                $.fail(json.msg);
+                if (json.msg == "短信验证码不正确") {
+                    $("#password").val("");
+                    $("#code").val("");
+                    CheckValidatePic();
+                }
+            }
+            else {
+                window.location.href = json.msg;
+            }
+        });
+    }
+</script>

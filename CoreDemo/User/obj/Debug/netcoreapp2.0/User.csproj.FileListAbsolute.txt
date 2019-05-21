@@ -1,0 +1,14 @@
+D:\git库\CoreDemo\User\obj\Debug\netcoreapp2.0\User.csprojResolveAssemblyReference.cache
+D:\git库\CoreDemo\User\obj\Debug\netcoreapp2.0\User.csproj.CoreCompileInputs.cache
+D:\git库\CoreDemo\User\obj\Debug\netcoreapp2.0\User.AssemblyInfoInputs.cache
+D:\git库\CoreDemo\User\obj\Debug\netcoreapp2.0\User.AssemblyInfo.cs
+D:\git库\CoreDemo\User\bin\Debug\netcoreapp2.0\User.deps.json
+D:\git库\CoreDemo\User\bin\Debug\netcoreapp2.0\User.dll
+D:\git库\CoreDemo\User\bin\Debug\netcoreapp2.0\User.pdb
+D:\git库\CoreDemo\User\bin\Debug\netcoreapp2.0\Common.dll
+D:\git库\CoreDemo\User\bin\Debug\netcoreapp2.0\DBAccess.dll
+D:\git库\CoreDemo\User\bin\Debug\netcoreapp2.0\Common.pdb
+D:\git库\CoreDemo\User\bin\Debug\netcoreapp2.0\DBAccess.pdb
+D:\git库\CoreDemo\User\obj\Debug\netcoreapp2.0\User.csproj.CopyComplete
+D:\git库\CoreDemo\User\obj\Debug\netcoreapp2.0\User.dll
+D:\git库\CoreDemo\User\obj\Debug\netcoreapp2.0\User.pdb

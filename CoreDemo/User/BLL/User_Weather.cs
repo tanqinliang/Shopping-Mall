@@ -9,10 +9,9 @@ Author			Date				Description
 using System;
 using System.Data;
 using System.Text;
-using Soholife;
 
 
-namespace Soholife.BLL
+namespace BLL
 {
 	/// <summary>
 	/// 业务逻辑层Soholife.Model代码 
@@ -74,15 +73,7 @@ namespace Soholife.BLL
 			return dal.GetRecordList();
 		}
 
-		/// <summary>
-		/// 得到分页记录
-		/// </summary>
-		/// <returns></returns>
-		public Soholife.DB.SplitPage GetRecordList(int iPage,int iPageSize)
-		{
-			return dal.GetRecordList(iPage,iPageSize);
-		}
-
+	
 	}
 }
 

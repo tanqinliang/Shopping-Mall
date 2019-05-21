@@ -3,9 +3,29 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.6" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.7" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" />
   </ItemGroup>
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BasePage\BasePage.csproj" />
+    <ProjectReference Include="..\Common\Common.csproj" />
+    <ProjectReference Include="..\DBAccess\DBAccess.csproj" />
+    <ProjectReference Include="..\User\User.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\Product\Controllers\file\" />
+    <Folder Include="Areas\Product\Data\" />
+    <Folder Include="Areas\Product\Models\" />
+    <Folder Include="Areas\ShopManage\Data\" />
+    <Folder Include="Areas\ShopManage\Models\" />
+    <Folder Include="wwwroot\images\ProductImage\" />
+    <Folder Include="wwwroot\ShoppingMall\aspnet_client\system_web\4_0_30319\" />
+    <Folder Include="wwwroot\ShoppingMall\common\js\plus\jqplot\examples\colorpicker\" />
+    <Folder Include="wwwroot\ShoppingMall\common\js\plus\jqplot\examples\images\" />
+    <Folder Include="wwwroot\ShoppingMall\common\js\plus\jqplot\examples\jquery-ui\" />
+    <Folder Include="wwwroot\ShoppingMall\common\js\plus\jqplot\examples\syntaxhighlighter\" />
   </ItemGroup>
 </Project>

@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewData["Title"] = "ProductDetail";
+    Layout = "~/Views/MasterPage/ShopPage.cshtml";
+    Model.Product_Info ProductInfo = ViewBag.ProductInfo;
+    Model.ProductType ProductType = ViewBag.ProductType;
+    Model.Product_Material Product_Material = ViewBag.ProductMaterial;
+}
+
+<style>
+    .a_center {
+        border-radius: 13px;
+        text-align: center;
+    }
+
+    .a_background_color {
+        background-color: darkorange;
+    }
+</style>
+<div class="card_body mb15 exchangeBox">
+    <div class="exchangeTop">
+        <div class="exchangeImg">
+            <img src="@($"{ProductInfo.Image}{ProductInfo.ID}.png")" alt="" />
+        </div>
+        <div class="exchangeContent">
+            <p class="exchangeTitle">@ProductInfo.ProductName</p>
+            <p class="mt15">
+                <label class="w_65" style="width:88px">商品类型：</label>
+
+                <span value="" class="valueType" style="color:darkorange">@ProductType.Title</span>
+
+            </p>
+            <p>
+                <label class="w_65" style="width:88px">商品材质：</label>
+                <span class="valueType_box">
+                    <span id="" class="valueTypeProd" style="color:darkorange">
+                        @Product_Material.Name
+                    </span>
+                </span>
+            </p>
+            <p class="value_next">
+                <label class="w_65" style="width:88px">价格：</label>
+                <span class="valueType_box">
+                    <span id="" class="valueTypeProd" style="color:darkorange">
+                        @(ProductInfo.Price + "/" + ProductInfo.Unit)
+                    </span>
+                </span>
+            </p>
+            <p id="PcardMobile">
+            </p>
+            <p class="mt0">
+                <input type="button" class="btn-ff8448 submitExchange" value="立即预定" onclick="Reserve()" />
+            </p>
+
+            <p class="ugameList" id="gameList"></p>
+        </div>
+    </div>
+    <!--商品介绍-->
+    <div class="exchangeInfoBox">
+        <div class="nav_bg">
+            <a href="javascript:void(0)" id="2">商品详情</a>
+        </div>
+        <div class="exchangeNoteBox">
+
+            <!--商品介绍-->
+            <div class="exchangeInfoCon InfoCon2">@(Html.Raw(ProductInfo.Details))</div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function Reserve() {
+
+        window.open("/Shop/AboutUs", "_blank");
+    }
+</script>
+
+
+
