@@ -13609,11 +13609,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\git库\\CoreDemo\\CoreDemo\\CoreDemo.csproj",
+      "projectUniqueName": "D:\\git库\\Shopping-Mall\\CoreDemo\\CoreDemo\\CoreDemo.csproj",
       "projectName": "CoreDemo",
-      "projectPath": "D:\\git库\\CoreDemo\\CoreDemo\\CoreDemo.csproj",
+      "projectPath": "D:\\git库\\Shopping-Mall\\CoreDemo\\CoreDemo\\CoreDemo.csproj",
       "packagesPath": "C:\\Users\\tql\\.nuget\\packages\\",
-      "outputPath": "D:\\git库\\CoreDemo\\CoreDemo\\obj\\",
+      "outputPath": "D:\\git库\\Shopping-Mall\\CoreDemo\\CoreDemo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13632,17 +13632,17 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "D:\\git库\\CoreDemo\\BasePage\\BasePage.csproj": {
-              "projectPath": "D:\\git库\\CoreDemo\\BasePage\\BasePage.csproj"
+            "D:\\git库\\Shopping-Mall\\CoreDemo\\BasePage\\BasePage.csproj": {
+              "projectPath": "D:\\git库\\Shopping-Mall\\CoreDemo\\BasePage\\BasePage.csproj"
             },
-            "D:\\git库\\CoreDemo\\Common\\Common.csproj": {
-              "projectPath": "D:\\git库\\CoreDemo\\Common\\Common.csproj"
+            "D:\\git库\\Shopping-Mall\\CoreDemo\\Common\\Common.csproj": {
+              "projectPath": "D:\\git库\\Shopping-Mall\\CoreDemo\\Common\\Common.csproj"
             },
-            "D:\\git库\\CoreDemo\\DBAccess\\DBAccess.csproj": {
-              "projectPath": "D:\\git库\\CoreDemo\\DBAccess\\DBAccess.csproj"
+            "D:\\git库\\Shopping-Mall\\CoreDemo\\DBAccess\\DBAccess.csproj": {
+              "projectPath": "D:\\git库\\Shopping-Mall\\CoreDemo\\DBAccess\\DBAccess.csproj"
             },
-            "D:\\git库\\CoreDemo\\User\\User.csproj": {
-              "projectPath": "D:\\git库\\CoreDemo\\User\\User.csproj"
+            "D:\\git库\\Shopping-Mall\\CoreDemo\\User\\User.csproj": {
+              "projectPath": "D:\\git库\\Shopping-Mall\\CoreDemo\\User\\User.csproj"
             }
           }
         }

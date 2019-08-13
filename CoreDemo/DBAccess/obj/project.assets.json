@@ -12959,11 +12959,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\git库\\CoreDemo\\DBAccess\\DBAccess.csproj",
+      "projectUniqueName": "D:\\git库\\Shopping-Mall\\CoreDemo\\DBAccess\\DBAccess.csproj",
       "projectName": "DBAccess",
-      "projectPath": "D:\\git库\\CoreDemo\\DBAccess\\DBAccess.csproj",
+      "projectPath": "D:\\git库\\Shopping-Mall\\CoreDemo\\DBAccess\\DBAccess.csproj",
       "packagesPath": "C:\\Users\\tql\\.nuget\\packages\\",
-      "outputPath": "D:\\git库\\CoreDemo\\DBAccess\\obj\\",
+      "outputPath": "D:\\git库\\Shopping-Mall\\CoreDemo\\DBAccess\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -12982,8 +12982,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "D:\\git库\\CoreDemo\\Common\\Common.csproj": {
-              "projectPath": "D:\\git库\\CoreDemo\\Common\\Common.csproj"
+            "D:\\git库\\Shopping-Mall\\CoreDemo\\Common\\Common.csproj": {
+              "projectPath": "D:\\git库\\Shopping-Mall\\CoreDemo\\Common\\Common.csproj"
             }
           }
         }
